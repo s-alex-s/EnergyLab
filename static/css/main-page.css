@@ -1,0 +1,204 @@
+.owl-carousel .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    margin: 5px 7px;
+    background: white;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 30px;
+}
+.owl-carousel .owl-dots {
+    position: absolute;
+    bottom: 40px;
+    left: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 86px;
+    height: 20px;
+}
+.owl-carousel .owl-dots .owl-dot span:hover {
+    width: 14px;
+    height: 14px;
+}
+.active span {
+    width: 14px !important;
+    height: 14px !important;
+}
+.owl-carousel .owl-nav {
+    display: none;
+}
+
+.owl-item {
+    height: 92vh !important;
+}
+
+.carousel-titles {
+    width: 75%;
+}
+
+.img1 {
+    background: no-repeat url("/static/img/img1.png");
+    font-size: 4vw;
+}
+.img2 {
+    background: no-repeat url("/static/img/img2.png");
+    font-size: 5vw;
+}
+.img3 {
+    background: no-repeat url("/static/img/img3.png");
+    font-size: 5vw;
+}
+.img1, .img2, .img3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #031052;
+    color: white;
+    width: 50%;
+}
+
+.info-box {
+    padding: 70px 0px;
+    width: 85%;
+}
+
+.info-check {
+    margin-top: 50px;
+    display: flex;
+    font-size: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: solid white;
+    border-width: 2px;
+    padding: 25px 30px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.info-check:hover {
+    background: rgba(196, 196, 196, 0.13);
+    border: none;
+    height: 200px;
+}
+
+.map {
+    width: 100%;
+    height: 1080px;
+    background: no-repeat url("/static/img/map.png");
+}
+
+.container-info {
+    margin-top: 80px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.white-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: min-content;
+    font-size: 30px;
+}
+.white-box img {
+    margin-left: 120px;
+}
+
+.info-value {
+    color: #1170FF;
+}
+
+.graph {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.year-button {
+    transition: all 0.2s ease-in-out;
+}
+.year-button:hover {
+    cursor: pointer;
+    background-color: #031052;
+    color: white;
+}
+.year-active {
+    background-color: #031052;
+    color: white;
+}
+
+.year-button2 {
+    transition: all 0.2s ease-in-out;
+}
+.year-button2:hover {
+    cursor: pointer;
+    background-color: #031052;
+    color: white;
+}
+.year-active2 {
+    background-color: #031052;
+    color: white;
+}
+
+.container-graph {
+    width: 60%;
+    margin-top: 50px;
+}
+
+#myChart {
+    width: 100% !important;
+}
+
+#datapick {
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #9f9f9f;
+    border-radius: 6px;
+    margin-top: 50px;
+    transition: all 0.2s ease-in-out;
+}
+#datapick:hover {
+    background-color: #c5c5c5;
+    border-color: #0ca7ee;
+}
+
+.show-button {
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #9f9f9f;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+    margin-top: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.show-button:hover {
+    background-color: #c5c5c5;
+    border-color: #0ca7ee;
+}

@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/static/script/owlcarousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/script/owlcarousel/dist/assets/owl.theme.default.min.css">
+    <script src="/static/script/owlcarousel/dist/owl.carousel.min.js"></script>
+    <script src="/static/script/owlcarousel/start-carousel.js"></script>
+    <link rel="stylesheet" href="/static/script/air-datepicker/dist/air-datepicker.css">
+    <link rel="stylesheet" href="/static/css/main-page.css">
+
+    <div class="owl-carousel">
+        <div class="img1">
+            <div class="carousel-titles">
+                <div style="font-size: 8vw">SMART CITY:</div>
+                <div>умный - значит энергоэффективный</div>
+            </div>
+        </div>
+        <div class="img2">
+            <div class="carousel-titles">
+                <div>ЭНЕРГОСБЕРЕЖЕНИЕ.</div>
+                <div>ЧТО СДЕЛАНО ЗА 10 ЛЕТ?</div>
+            </div>
+        </div>
+        <div class="img3">
+            <div class="carousel-titles">
+                <div>МЕЖДУНАРОДНОЕ</div>
+                <div>ЭНЕРГЕТИЧЕСКОЕ АГЕНТСТВО</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <div class="info-box">
+                <div style="font-size: 4vw">Тепловые энергостанции в городе Нур-Султан</div>
+                <div class="info-check">
+                    <div>ТЭЦ-1</div>
+                    <div>+</div>
+                </div>
+                <div class="info-check">
+                    <div>ТЭЦ-2</div>
+                    <div>+</div>
+                </div>
+                <div class="info-check">
+                    <div>ТЭЦ-3</div>
+                    <div>+</div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="map"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container-info">
+            {% for i in winddata.keys() %}
+                {% if loop.index == 1 and '_in' not in i %}
+                    <div onclick="change_data_key({{ i }})" class="white-box year-button year-active">
+                        <div>
+                            <div>{{ i }}</div>
+                        </div>
+                    </div>
+                {% elif '_in' not in i %}
+                    <div onclick="change_data_key({{ i }})" class="white-box year-button">
+                        <div>
+                            <div>{{ i }}</div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <input id="datapick" type="text" placeholder="Выберите дату" readonly>
+        <div class="show-button" onclick="change_data_key(null, true)">Показать</div>
+    </div>
+
+    <div class="container">
+        <div class="container-graph">
+            <div class="white-box graph">
+              <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container-info">
+            <div class="white-box year-button2 year-active2">
+                <div>
+                    <div>2018</div>
+                </div>
+            </div>
+
+            <div class="white-box year-button2">
+                <div>
+                    <div>2019</div>
+                </div>
+            </div>
+
+            <div class="white-box year-button2">
+                <div>
+                    <div>2020</div>
+                </div>
+            </div>
+
+            <div class="white-box year-button2">
+                <div>
+                    <div>2021</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container-graph">
+            <div class="white-box graph">
+              <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script/chart.min.js"></script>
+    <script src="/static/script/chartjs-plugin-datalabels.min.js"></script>
+    <script src="/static/script/air-datepicker/dist/air-datepicker.js"></script>
+    <script>
+        new AirDatepicker('#datapick', {
+            minDate: '2019.01.01',
+            maxDate: '2021.12.31',
+        })
+    </script>
+    <script>
+        let data_key = "2019";
+        make_graph1(data_key);
+
+        function change_data_key(key, date=false) {
+            if (!date) {
+                data_key = key;
+                make_graph1(data_key);
+            } else {
+                let data = document.getElementById('datapick').value.split('.');
+                make_graph1(data, true);
+            }
+
+            let year_button = document.getElementsByClassName('year-button');
+            for (let i = 0; i < year_button.length; ++i) {
+                if (year_button[i].classList.contains('year-active') && year_button[i].textContent != key) {
+                    year_button[i].classList.remove('year-active');
+                }
+                if (year_button[i].textContent == key) {
+                    year_button[i].classList.add('year-active');
+                }
+            }
+        }
+
+        function make_graph1(data_key, date=false) {
+            const datapoints = {{ winddata|tojson }};
+            let data = {};
+            let text = 'Скорость ветра, ';
+
+            if (!date) {
+                data = {
+                    labels: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь",
+                        "Ноябрь", "Декабрь"],
+                    datasets: [
+                        {
+                            label: 'Скорость ветра м/с (Среднее значение)',
+                            data: datapoints[data_key],
+                            borderColor: '#E52B50',
+                            fill: true,
+                            backgroundColor: 'rgba(229,43,80,0.6)',
+                            cubicInterpolationMode: 'monotone',
+                            tension: 0.4
+                        }
+                    ]
+                };
+                text = text + data_key + ' год';
+            } else {
+                let labels = [];
+                let datasets_data = [];
+
+                for (let i = 0; i < datapoints[data_key[2] + '_in'][data_key[1]][data_key[0]].length; ++i) {
+                    labels.push(datapoints[data_key[2] + '_in'][data_key[1]][data_key[0]][i][0]);
+                    datasets_data.push(datapoints[data_key[2] + '_in'][data_key[1]][data_key[0]][i][1]);
+                }
+
+                data = {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Скорость ветра м/с',
+                            data: datasets_data,
+                            borderColor: '#E52B50',
+                            fill: true,
+                            backgroundColor: 'rgba(229,43,80,0.6)',
+                            cubicInterpolationMode: 'monotone',
+                            tension: 0.4
+                        }
+                    ]
+                };
+                text = text + data_key.join('.');
+            }
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            let chartStatus = Chart.getChart('myChart');
+            if (chartStatus != undefined) {
+                chartStatus.destroy();
+            }
+            var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: data,
+                  options: {
+                    responsive: true,
+                    plugins: {
+                      title: {
+                        display: true,
+                        text: text
+                      },
+                    },
+                    interaction: {
+                      intersect: false,
+                    },
+                    scales: {
+                      x: {
+                        display: true,
+                        title: {
+                          display: true
+                        }
+                      },
+                      y: {
+                        display: true,
+                        title: {
+                          display: true,
+                          text: 'Скорость м/с'
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                      }
+                    }
+                  },
+                });
+        }
+
+            const DATA_COUNT = 12;
+            const labels = [];
+            for (let i = 0; i < DATA_COUNT; ++i) {
+              labels.push(i.toString());
+            }
+            const datapoints2 = [0, 20, 20, 60, 60, 120, 180, 120, 125, 105, 110, 170].reverse();
+
+
+            const data2 = {
+              labels: labels,
+              datasets: [
+                {
+                  label: 'Cubic interpolation (monotone)',
+                  data: datapoints2,
+                  borderColor: '#0e5cf8',
+                  fill: false,
+                  cubicInterpolationMode: 'monotone',
+                  tension: 0.4
+                }
+              ]
+            };
+
+
+
+            var ctx = document.getElementById('myChart2').getContext('2d');
+            var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: data2,
+                  options: {
+                    responsive: true,
+                    plugins: {
+                      title: {
+                        display: true,
+                        text: 'Chart.js Line Chart - Cubic interpolation mode'
+                      },
+                    },
+                    interaction: {
+                      intersect: false,
+                    },
+                    scales: {
+                      x: {
+                        display: true,
+                        title: {
+                          display: true
+                        }
+                      },
+                      y: {
+                        display: true,
+                        title: {
+                          display: true,
+                          text: 'Value'
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 200
+                      }
+                    }
+                  },
+                });
+    </script>
+{% endblock %}
