@@ -31,7 +31,7 @@
 }
 
 .owl-item {
-    height: 92vh !important;
+    height: 93vh !important;
 }
 
 .carousel-titles {
@@ -59,10 +59,17 @@
     color: white;
 }
 
-.container {
+.container, .container-dir {
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%;
 }
 
 .box {
@@ -72,10 +79,13 @@
     background: #031052;
     color: white;
     width: 50%;
+    height: 800px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .info-box {
-    padding: 70px 0px;
+    padding: 40px 0px;
     width: 85%;
 }
 
@@ -99,15 +109,16 @@
 
 .map {
     width: 100%;
-    height: 1080px;
-    background: no-repeat url("/static/img/map.png");
+    height: 100%;
+    background: no-repeat url("/static/img/map.png") center;
 }
 
 .container-info {
     margin-top: 80px;
-    width: 60%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .info {
@@ -119,12 +130,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 30px;
+    padding: 10px 20px;
     background: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     width: min-content;
-    font-size: 30px;
+    font-size: 23px;
 }
 .white-box img {
     margin-left: 120px;
@@ -166,7 +177,7 @@
 }
 
 .container-graph {
-    width: 60%;
+    width: 90%;
     margin-top: 50px;
 }
 
@@ -174,13 +185,13 @@
     width: 100% !important;
 }
 
-#datapick {
+#datapick, #datapick2 {
     padding: 10px;
     font: inherit;
     border: 1px solid #9f9f9f;
     border-radius: 6px;
-    margin-top: 50px;
     transition: all 0.2s ease-in-out;
+    margin-left: 20px;
 }
 #datapick:hover {
     background-color: #c5c5c5;
@@ -194,11 +205,34 @@
     border-radius: 6px;
     transition: all 0.2s ease-in-out;
     background-color: white;
-    margin-top: 50px;
     margin-left: 10px;
     cursor: pointer;
 }
 .show-button:hover {
     background-color: #c5c5c5;
     border-color: #0ca7ee;
+}
+
+#datapick, #datapick2, .show-button {
+    font-size: 16px;
+}
+
+
+@media (max-width: 1740px) {
+    .container-dir {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .container2 {
+        width: 100%;
+    }
+
+    #datapick, #datapick2, .show-button {
+        font-size: 16px;
+    }
+
+    .white-box {
+        font-size: 27px;
+    }
 }

@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from data.Standart import db_session
 from pprint import pprint
-from data_load import winddata_json
+from data_load import winddata_json, airtemp_json, winddata_max_min, airtemp_max_min
 
 from data.database.winddata import Winddata
 from data.database.airtemp import AirTemp
@@ -14,7 +14,16 @@ app = Flask(__name__)
 
 @app.route('/')
 def main_page():
-    return render_template('main-page.html', winddata=winddata_json)
+    return render_template('main-page.html',
+                           winddata=winddata_json,
+                           airtemp=airtemp_json,
+                           winddata_max_min=winddata_max_min,
+                           airtemp_max_min=airtemp_max_min)
+
+
+@app.route('/analytics')
+def analytics_page():
+    return render_template('analytics.html')
 
 
 if __name__ == '__main__':

@@ -48,76 +48,71 @@
                 </div>
             </div>
         </div>
-        <div class="box">
+        <div class="box" style="overflow: hidden">
             <div class="map"></div>
         </div>
     </div>
 
     <div class="container">
-        <div class="container-info">
-            {% for i in winddata.keys() %}
-                {% if loop.index == 1 and '_in' not in i %}
-                    <div onclick="change_data_key({{ i }})" class="white-box year-button year-active">
-                        <div>
-                            <div>{{ i }}</div>
-                        </div>
+        <div class="container-dir">
+            <div class="container2">
+                <div class="container-info">
+                    {% for i in winddata.keys() %}
+                        {% if loop.index == 1 and '_in' not in i %}
+                            <div onclick="change_data_key({{ i }})" class="white-box year-button year-active">
+                                <div>
+                                    <div>{{ i }}</div>
+                                </div>
+                            </div>
+                        {% elif '_in' not in i %}
+                            <div onclick="change_data_key({{ i }})" class="white-box year-button">
+                                <div>
+                                    <div>{{ i }}</div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div style="display: flex">
+                        <input id="datapick" type="text" placeholder="Выберите дату" readonly>
+                        <div class="show-button" onclick="change_data_key(null, true)">Показать</div>
                     </div>
-                {% elif '_in' not in i %}
-                    <div onclick="change_data_key({{ i }})" class="white-box year-button">
-                        <div>
-                            <div>{{ i }}</div>
-                        </div>
+                </div>
+
+                <div class="container-graph">
+                    <div class="white-box graph">
+                      <canvas id="myChart"></canvas>
                     </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-
-    <div class="container">
-        <input id="datapick" type="text" placeholder="Выберите дату" readonly>
-        <div class="show-button" onclick="change_data_key(null, true)">Показать</div>
-    </div>
-
-    <div class="container">
-        <div class="container-graph">
-            <div class="white-box graph">
-              <canvas id="myChart"></canvas>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="container-info">
-            <div class="white-box year-button2 year-active2">
-                <div>
-                    <div>2018</div>
                 </div>
             </div>
 
-            <div class="white-box year-button2">
-                <div>
-                    <div>2019</div>
+            <div class="container2">
+                <div class="container-info">
+                    {% for i in airtemp.keys() %}
+                        {% if loop.index == 1 and '_in' not in i %}
+                            <div onclick="change_data_key2({{ i }})" class="white-box year-button2 year-active2">
+                                <div>
+                                    <div>{{ i }}</div>
+                                </div>
+                            </div>
+                        {% elif '_in' not in i %}
+                            <div onclick="change_data_key2({{ i }})" class="white-box year-button2">
+                                <div>
+                                    <div>{{ i }}</div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div style="display: flex">
+                        <input id="datapick2" type="text" placeholder="Выберите дату" readonly>
+                        <div class="show-button" onclick="change_data_key2(null, true)">Показать</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="white-box year-button2">
-                <div>
-                    <div>2020</div>
+                <div class="container-graph">
+                    <div class="white-box graph">
+                      <canvas id="myChart2"></canvas>
+                    </div>
                 </div>
-            </div>
-
-            <div class="white-box year-button2">
-                <div>
-                    <div>2021</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="container-graph">
-            <div class="white-box graph">
-              <canvas id="myChart2"></canvas>
             </div>
         </div>
     </div>
@@ -127,15 +122,20 @@
     <script src="/static/script/air-datepicker/dist/air-datepicker.js"></script>
     <script>
         new AirDatepicker('#datapick', {
-            minDate: '2019.01.01',
-            maxDate: '2021.12.31',
+            minDate: '{{ winddata_max_min[1] }}.01.01',
+            maxDate: '{{ winddata_max_min[0] }}.12.31'
+        })
+
+        new AirDatepicker('#datapick2', {
+            minDate: '{{ airtemp_max_min[1] }}.01.01',
+            maxDate: '{{ airtemp_max_min[0] }}.12.31'
         })
     </script>
     <script>
         let data_key = "2019";
         make_graph1(data_key);
 
-        function change_data_key(key, date=false) {
+        function change_data_key(key, date = false) {
             if (!date) {
                 data_key = key;
                 make_graph1(data_key);
@@ -155,7 +155,7 @@
             }
         }
 
-        function make_graph1(data_key, date=false) {
+        function make_graph1(data_key, date = false) {
             const datapoints = {{ winddata|tojson }};
             let data = {};
             let text = 'Скорость ветра, ';
@@ -243,63 +243,114 @@
                 });
         }
 
-            const DATA_COUNT = 12;
-            const labels = [];
-            for (let i = 0; i < DATA_COUNT; ++i) {
-              labels.push(i.toString());
-            }
-            const datapoints2 = [0, 20, 20, 60, 60, 120, 180, 120, 125, 105, 110, 170].reverse();
 
+            let data_key2 = "2018";
+            make_graph2(data_key2);
 
-            const data2 = {
-              labels: labels,
-              datasets: [
-                {
-                  label: 'Cubic interpolation (monotone)',
-                  data: datapoints2,
-                  borderColor: '#0e5cf8',
-                  fill: false,
-                  cubicInterpolationMode: 'monotone',
-                  tension: 0.4
+            function change_data_key2(key, date = false) {
+                if (!date) {
+                    data_key2 = key;
+                    make_graph2(data_key2);
+                } else {
+                    let data2 = document.getElementById('datapick2').value.split('.');
+                    make_graph2(data2, true);
                 }
-              ]
-            };
 
+                let year_button = document.getElementsByClassName('year-button2');
+                for (let i = 0; i < year_button.length; ++i) {
+                    if (year_button[i].classList.contains('year-active2') && year_button[i].textContent != key) {
+                        year_button[i].classList.remove('year-active2');
+                    }
+                    if (year_button[i].textContent == key) {
+                        year_button[i].classList.add('year-active2');
+                    }
+                }
+            }
 
+            function make_graph2(data_key, date = false) {
+                const datapoints2 = {{ airtemp|tojson }};
+                let data = {};
+                let text = 'Температура воздуха, ';
 
-            var ctx = document.getElementById('myChart2').getContext('2d');
-            var myChart = new Chart(ctx, {
-                  type: 'line',
-                  data: data2,
-                  options: {
-                    responsive: true,
-                    plugins: {
-                      title: {
-                        display: true,
-                        text: 'Chart.js Line Chart - Cubic interpolation mode'
-                      },
-                    },
-                    interaction: {
-                      intersect: false,
-                    },
-                    scales: {
-                      x: {
-                        display: true,
-                        title: {
-                          display: true
+                if (!date) {
+                    data = {
+                        labels: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь",
+                        "Ноябрь", "Декабрь"],
+                        datasets: [
+                            {
+                                label: 'Температура воздуха по цельсию (Среднее значение)',
+                                data: datapoints2[data_key],
+                                borderColor: '#0e5cf8',
+                                fill: false,
+                                cubicInterpolationMode: 'monotone',
+                                tension: 0.4
+                            }
+                        ]
+                    };
+                    text = text + data_key + ' год';
+                } else {
+                    let labels = [];
+                    let datasets_data = [];
+
+                    for (let i = 0; i < datapoints2[data_key[2] + '_in'][data_key[1]][data_key[0]].length; ++i) {
+                        labels.push(datapoints2[data_key[2] + '_in'][data_key[1]][data_key[0]][i][0]);
+                        datasets_data.push(datapoints2[data_key[2] + '_in'][data_key[1]][data_key[0]][i][1]);
+                    }
+
+                    data = {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'Температура воздуха по цельсию',
+                                data: datasets_data,
+                                borderColor: '#0e5cf8',
+                                fill: false,
+                                cubicInterpolationMode: 'monotone',
+                                tension: 0.4
+                            }
+                        ]
+                    };
+                    text = text + data_key.join('.');
+                }
+
+                var ctx = document.getElementById('myChart2').getContext('2d');
+                let chartStatus = Chart.getChart('myChart2');
+                if (chartStatus != undefined) {
+                    chartStatus.destroy();
+                }
+                var myChart2 = new Chart(ctx, {
+                      type: 'line',
+                      data: data,
+                      options: {
+                        responsive: true,
+                        plugins: {
+                          title: {
+                            display: true,
+                            text: text
+                          },
+                        },
+                        interaction: {
+                          intersect: false,
+                        },
+                        scales: {
+                          x: {
+                            display: true,
+                            title: {
+                              display: true
+                            }
+                          },
+                          y: {
+                            display: true,
+                            title: {
+                              display: true,
+                              text: 'Температура воздуха по цельсию'
+                            },
+                            suggestedMin: -30,
+                            suggestedMax: 30
+                          }
                         }
                       },
-                      y: {
-                        display: true,
-                        title: {
-                          display: true,
-                          text: 'Value'
-                        },
-                        suggestedMin: 0,
-                        suggestedMax: 200
-                      }
-                    }
-                  },
-                });
+                    });
+            }
     </script>
 {% endblock %}

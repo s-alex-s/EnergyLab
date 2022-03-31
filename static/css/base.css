@@ -16,6 +16,16 @@ header {
     background-color: white;
 }
 
+.logo img {
+    width: 220px;
+    height: auto;
+}
+
+.footer-logo img {
+    width: 500px;
+    height: auto;
+}
+
 footer {
     display: flex;
     justify-content: center;

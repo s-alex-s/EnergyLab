@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+table {
+    background-color: white;
+    border-bottom: 6px;
+}
+
+.table1 th {
+    background-color: #031052;
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid white;
+}
+
+td {
+    text-align: center;
+}
+
+.graph {
+    width: 951px;
+}
+
+.white-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
