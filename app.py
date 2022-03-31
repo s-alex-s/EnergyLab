@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 from data.Standart import db_session
-from pprint import pprint
 from data_load import winddata_json, airtemp_json, winddata_max_min, airtemp_max_min
 
 from data.database.winddata import Winddata
