@@ -34,22 +34,25 @@
         <div class="box">
             <div class="info-box">
                 <div style="font-size: 4vw">Тепловые энергостанции в городе Нур-Султан</div>
-                <div class="info-check">
-                    <div>ТЭЦ-1</div>
-                    <div>+</div>
-                </div>
-                <div class="info-check">
-                    <div>ТЭЦ-2</div>
-                    <div>+</div>
-                </div>
-                <div class="info-check">
-                    <div>ТЭЦ-3</div>
-                    <div>+</div>
-                </div>
+
+                {% for i in stations %}
+                    <div id="{{ i[0] }}" class="info-check" onclick="check_click('{{ i[0] }}')">
+                        <div class="info-container">
+                            <div>{{ i[0] }}</div>
+                            <div class="sign">+</div>
+                        </div>
+                        <div class="info-addr">
+                            <div style="display: flex">
+                                <div style="margin-right: 10px">Адрес:</div>
+                                <div style="font-weight: lighter">{{ i[1] }}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <div class="box" style="overflow: hidden">
-            <div class="map"></div>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0871ca6c0585f092347d26434fa39c28b991d72f1f2bd99880f2757b92e7355f&amp;width=100%25&amp;height=720&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
     </div>
 
@@ -120,6 +123,20 @@
     <script src="/static/script/chart.min.js"></script>
     <script src="/static/script/chartjs-plugin-datalabels.min.js"></script>
     <script src="/static/script/air-datepicker/dist/air-datepicker.js"></script>
+    <script>
+        function check_click(obj) {
+            let object = document.getElementById(obj);
+            if (object.classList.contains('check-active')) {
+                object.classList.remove('check-active');
+                object.querySelector('.info-addr').style = 'display: none;';
+                object.querySelector('.sign').textContent = '+';
+            } else {
+                object.classList.add('check-active');
+                object.querySelector('.info-addr').style = 'display: block;';
+                object.querySelector('.sign').textContent = '-';
+            }
+        }
+    </script>
     <script>
         new AirDatepicker('#datapick', {
             minDate: '{{ winddata_max_min[1] }}.01.01',

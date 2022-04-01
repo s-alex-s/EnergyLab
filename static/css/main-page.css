@@ -79,7 +79,7 @@
     background: #031052;
     color: white;
     width: 50%;
-    height: 800px;
+    height: 720px;
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -91,20 +91,26 @@
 
 .info-check {
     margin-top: 50px;
-    display: flex;
     font-size: 40px;
-    justify-content: space-between;
-    align-items: flex-start;
     border: solid white;
     border-width: 2px;
     padding: 25px 30px;
     transition: background-color 0.3s ease-in-out;
     cursor: pointer;
 }
-.info-check:hover {
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.info-addr {
+    display: none;
+    margin-top: 40px;
+}
+.check-active {
+    display: block;
     background: rgba(196, 196, 196, 0.13);
     border: none;
-    height: 200px;
 }
 
 .map {
@@ -193,7 +199,7 @@
     transition: all 0.2s ease-in-out;
     margin-left: 20px;
 }
-#datapick:hover {
+#datapick:hover, #datapick2:hover {
     background-color: #c5c5c5;
     border-color: #0ca7ee;
 }

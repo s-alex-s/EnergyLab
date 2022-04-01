@@ -10,6 +10,16 @@ db_session.global_init('db/database.db')
 
 app = Flask(__name__)
 
+stations = [('ТЭЦ-1', 'ул. Ондирис, 4/4'),
+            ('ТЭЦ-2', 'ул. Александра Пушкина'),
+            ('п. Пригородный (резерв)', 'ул. Беласар'),
+            ('п. Железнодородный', 'ул. Екибастуз'),
+            ('п. Промышленный', 'ул. Шарбакты'),
+            ('п. Интернациональный', 'ул. Нурлыжол'),
+            ('КГ КНБ п. Пригородный', 'ул. Беласар'),
+            ('п. УПТК', 'ул. Атырау'),
+            ('п. Мичурино', 'ул. Песчаная')]
+
 
 @app.route('/')
 def main_page():
@@ -17,7 +27,8 @@ def main_page():
                            winddata=winddata_json,
                            airtemp=airtemp_json,
                            winddata_max_min=winddata_max_min,
-                           airtemp_max_min=airtemp_max_min)
+                           airtemp_max_min=airtemp_max_min,
+                           stations=stations)
 
 
 @app.route('/analytics')
