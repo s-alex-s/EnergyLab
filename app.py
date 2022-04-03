@@ -2,9 +2,6 @@ from flask import Flask, render_template
 from data.Standart import db_session
 from data_load import winddata_json, airtemp_json, winddata_max_min, airtemp_max_min
 
-from data.database.winddata import Winddata
-from data.database.airtemp import AirTemp
-
 
 db_session.global_init('db/database.db')
 

@@ -163,10 +163,10 @@
 
             let year_button = document.getElementsByClassName('year-button');
             for (let i = 0; i < year_button.length; ++i) {
-                if (year_button[i].classList.contains('year-active') && year_button[i].textContent != key) {
+                if (year_button[i].classList.contains('year-active') && year_button[i].textContent !== key) {
                     year_button[i].classList.remove('year-active');
                 }
-                if (year_button[i].textContent == key) {
+                if (year_button[i].textContent === key) {
                     year_button[i].classList.add('year-active');
                 }
             }
@@ -220,44 +220,44 @@
                 text = text + data_key.join('.');
             }
 
-            var ctx = document.getElementById('myChart').getContext('2d');
+            const ctx = document.getElementById('myChart').getContext('2d');
             let chartStatus = Chart.getChart('myChart');
-            if (chartStatus != undefined) {
+            if (chartStatus !== undefined) {
                 chartStatus.destroy();
             }
-            var myChart = new Chart(ctx, {
-                  type: 'line',
-                  data: data,
-                  options: {
+            const myChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: {
                     responsive: true,
                     plugins: {
-                      title: {
-                        display: true,
-                        text: text
-                      },
+                        title: {
+                            display: true,
+                            text: text
+                        },
                     },
                     interaction: {
-                      intersect: false,
+                        intersect: false,
                     },
                     scales: {
-                      x: {
-                        display: true,
-                        title: {
-                          display: true
-                        }
-                      },
-                      y: {
-                        display: true,
-                        title: {
-                          display: true,
-                          text: 'Скорость м/с'
+                        x: {
+                            display: true,
+                            title: {
+                                display: true
+                            }
                         },
-                        suggestedMin: 0,
-                        suggestedMax: 10
-                      }
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Скорость м/с'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 10
+                        }
                     }
-                  },
-                });
+                },
+            });
         }
 
 
@@ -275,10 +275,10 @@
 
                 let year_button = document.getElementsByClassName('year-button2');
                 for (let i = 0; i < year_button.length; ++i) {
-                    if (year_button[i].classList.contains('year-active2') && year_button[i].textContent != key) {
+                    if (year_button[i].classList.contains('year-active2') && year_button[i].textContent !== key) {
                         year_button[i].classList.remove('year-active2');
                     }
-                    if (year_button[i].textContent == key) {
+                    if (year_button[i].textContent === key) {
                         year_button[i].classList.add('year-active2');
                     }
                 }
@@ -332,44 +332,44 @@
                     text = text + data_key.join('.');
                 }
 
-                var ctx = document.getElementById('myChart2').getContext('2d');
+                const ctx = document.getElementById('myChart2').getContext('2d');
                 let chartStatus = Chart.getChart('myChart2');
-                if (chartStatus != undefined) {
+                if (chartStatus !== undefined) {
                     chartStatus.destroy();
                 }
-                var myChart2 = new Chart(ctx, {
-                      type: 'line',
-                      data: data,
-                      options: {
+                const myChart2 = new Chart(ctx, {
+                    type: 'line',
+                    data: data,
+                    options: {
                         responsive: true,
                         plugins: {
-                          title: {
-                            display: true,
-                            text: text
-                          },
+                            title: {
+                                display: true,
+                                text: text
+                            },
                         },
                         interaction: {
-                          intersect: false,
+                            intersect: false,
                         },
                         scales: {
-                          x: {
-                            display: true,
-                            title: {
-                              display: true
-                            }
-                          },
-                          y: {
-                            display: true,
-                            title: {
-                              display: true,
-                              text: 'Температура воздуха по цельсию'
+                            x: {
+                                display: true,
+                                title: {
+                                    display: true
+                                }
                             },
-                            suggestedMin: -30,
-                            suggestedMax: 30
-                          }
+                            y: {
+                                display: true,
+                                title: {
+                                    display: true,
+                                    text: 'Температура воздуха по цельсию'
+                                },
+                                suggestedMin: -30,
+                                suggestedMax: 30
+                            }
                         }
-                      },
-                    });
+                    },
+                });
             }
     </script>
 {% endblock %}

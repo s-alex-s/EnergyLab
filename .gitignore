@@ -1,4 +1,9 @@
 config.py
 .idea/
 parse_excel.py
+parse_excel2.py
 info/
+Lib/
+include/
+Scripts/
+pyvenv.cfg

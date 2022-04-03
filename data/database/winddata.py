@@ -1,5 +1,4 @@
 import sqlalchemy
-from sqlalchemy import orm
 from data.Standart.db_session import SqlAlchemyBase
 
 

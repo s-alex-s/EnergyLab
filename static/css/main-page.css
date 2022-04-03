@@ -85,15 +85,14 @@
 }
 
 .info-box {
-    padding: 40px 0px;
+    padding: 40px 0;
     width: 85%;
 }
 
 .info-check {
     margin-top: 50px;
     font-size: 40px;
-    border: solid white;
-    border-width: 2px;
+    border: 2px solid white;
     padding: 25px 30px;
     transition: background-color 0.3s ease-in-out;
     cursor: pointer;
@@ -106,6 +105,7 @@
 .info-addr {
     display: none;
     margin-top: 40px;
+    font-size: 30px;
 }
 .check-active {
     display: block;
@@ -138,7 +138,7 @@
     align-items: center;
     padding: 10px 20px;
     background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     width: min-content;
     font-size: 23px;
