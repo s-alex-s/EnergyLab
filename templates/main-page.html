@@ -33,7 +33,11 @@
     <div class="container">
         <div class="box">
             <div class="info-box">
-                <div style="font-size: 4vw">Тепловые энергостанции в городе Нур-Султан</div>
+                <div style="font-size: 3vw">
+                    <div>Тепловые</div>
+                    <div>энергостанции в</div>
+                    <div>городе Нур-Султан</div>
+                </div>
 
                 {% for i in stations %}
                     <div id="{{ i[0] }}" class="info-check" onclick="check_click('{{ i[0] }}')">

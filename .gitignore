@@ -4,3 +4,6 @@ parse_excel.py
 parse_excel2.py
 info/
 pyvenv.cfg
+Scripts/
+Lib/
+include/

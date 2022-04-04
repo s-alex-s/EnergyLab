@@ -11,50 +11,19 @@
     </div>
 
     <div class="container">
-        <table cellspacing="0" class="table1">
-            <tbody>
-                <tr>
-                    <th colspan="7" style="background-color: #EAEAEA; border: none; color: black">Показатели основной деятельности</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th>2016 г</th>
-                    <th>2017 г</th>
-                    <th>2018 г</th>
-                    <th>2019 г</th>
-                    <th>2020 г</th>
-                    <th>Изменение за период</th>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Передача электроэнергии, млн. кВт*ч</div></td>
-                    <td>3033,4</td>
-                    <td>3203</td>
-                    <td>3396</td>
-                    <td>3433,8</td>
-                    <td>3352,2</td>
-                    <td>10,5%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start;"><div style="margin-left: 10px">Доля потерь электроэнергии, %</div></td>
-                    <td>13,7%</td>
-                    <td>12,8%</td>
-                    <td>11,8%</td>
-                    <td>11,0%</td>
-                    <td>12,1%</td>
-                    <td>-11,5%</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="container">
-        <div class="white-box graph">
+        <div class="white-box graph" style="margin-right: 20px;">
             <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="white-box graph">
+            <canvas id="myChart2"></canvas>
         </div>
     </div>
 
     <div class="container">
-        <hr width="70%" color="#BDBDBD" style="height: 1px; margin-top: 100px">
+        <div class="white-box" style="width: 1000px;">
+            <canvas id="myChart3" class="on-observe3"></canvas>
+        </div>
     </div>
 
     <div class="container" style="margin-top: 100px">
@@ -94,341 +63,6 @@
         </table>
     </div>
 
-    <div class="container">
-        <hr width="70%" color="#BDBDBD" style="height: 1px; margin-top: 100px">
-    </div>
-
-    <div class="container" style="margin-top: 100px">
-        <table cellspacing="0" class="table1">
-            <tbody>
-                <tr>
-                    <th colspan="7" style="background-color: #EAEAEA; border: none; color: black">Динамика развития электросетевого оборудования</th>
-                </tr>
-                <tr>
-                    <th>Электросетевое оборудование (эксплатирующийся)</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <th>км</th>
-                    <th>2016 г</th>
-                    <th>2017 г</th>
-                    <th>2018 г</th>
-                    <th>2019 г</th>
-                    <th>2020 г</th>
-                    <th>Изменение за период</th>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">КЛ-220кВ</div></td>
-                    <td>2,234</td>
-                    <td>2,234</td>
-                    <td>2,234</td>
-                    <td>12,3</td>
-                    <td>12,3</td>
-                    <td>450,6%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">КЛ-110кВ</div></td>
-                    <td>95,73</td>
-                    <td>101,684</td>
-                    <td>134,848</td>
-                    <td>140,552</td>
-                    <td>168,524</td>
-                    <td>76%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">КЛ-20кВ</div></td>
-                    <td>-</td>
-                    <td>228,891</td>
-                    <td>299,017</td>
-                    <td>208,981</td>
-                    <td>310,956</td>
-                    <td>35,9%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">КЛ-10кВ</div></td>
-                    <td>1433,78</td>
-                    <td>1684,4106</td>
-                    <td>1804,783</td>
-                    <td>1866,749</td>
-                    <td>2140,219</td>
-                    <td>49,3%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">КЛ-6кВ</div></td>
-                    <td>-</td>
-                    <td>19,065</td>
-                    <td>19,065</td>
-                    <td>19,065</td>
-                    <td>19,065</td>
-                    <td>0,0%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">КЛ-0,4кВ</div></td>
-                    <td>909,31</td>
-                    <td>942,7247</td>
-                    <td>993,797</td>
-                    <td>999,126</td>
-                    <td>1111,556</td>
-                    <td>22,2%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">ВЛ-220кВ</div></td>
-                    <td>124</td>
-                    <td>124,588</td>
-                    <td>124,588</td>
-                    <td>143,436</td>
-                    <td>143,436</td>
-                    <td>15,7%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">ВЛ-110кВ</div></td>
-                    <td>148,9</td>
-                    <td>148,633</td>
-                    <td>149,569</td>
-                    <td>144,953</td>
-                    <td>202,255</td>
-                    <td>35,8%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">ВЛ-10кВ</div></td>
-                    <td>326,58</td>
-                    <td>332,569</td>
-                    <td>329,31</td>
-                    <td>326,09</td>
-                    <td>350,04</td>
-                    <td>7,2%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">ВЛ-0,4кВ</div></td>
-                    <td>453</td>
-                    <td>442,495</td>
-                    <td>437,774</td>
-                    <td>442,679</td>
-                    <td>508,734</td>
-                    <td>12,3%</td>
-                </tr>
-                <tr>
-                    <th>штук</th>
-                    <th>2016 г</th>
-                    <th>2017 г</th>
-                    <th>2018 г</th>
-                    <th>2019 г</th>
-                    <th>2020 г</th>
-                    <th>Изменение за период</th>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">ПС-220кВ</div></td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>0,0%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">ПС-110кВ</div></td>
-                    <td>27</td>
-                    <td>29</td>
-                    <td>28</td>
-                    <td>28</td>
-                    <td>29</td>
-                    <td>7,4%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">РП, ТП, КТП-10/0,4кВ</div></td>
-                    <td>1177</td>
-                    <td>1318</td>
-                    <td>1366</td>
-                    <td>1395</td>
-                    <td>1434</td>
-                    <td>21,8%</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="container">
-        <div class="white-box graph">
-            <canvas id="myChart2"></canvas>
-        </div>
-    </div>
-
-    <div class="container">
-        <hr width="70%" color="#BDBDBD" style="height: 1px; margin-top: 100px">
-    </div>
-
-    <div class="container" style="margin-top: 100px">
-        <table cellspacing="0" class="table1">
-            <tbody>
-                <tr>
-                    <th colspan="7" style="background-color: #EAEAEA; border: none; color: black">Данные других РЭК 2020 год (для сравнения)</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th>Тариф, тенге/кВт*ч</th>
-                    <th>Передача ээ, млн. кВт*ч</th>
-                    <th>Потери ээ, %</th>
-                    <th>Износ основных фондов, %</th>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Кокшетау-Энерго</div></td>
-                    <td>5,93</td>
-                    <td>1247,7</td>
-                    <td>17,6%</td>
-                    <td>57,5%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Акмолинская РЭК</div></td>
-                    <td>4,85</td>
-                    <td>2398,3</td>
-                    <td>4,78%</td>
-                    <td>66%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Онтустик Жарык Транзит РЭК</div></td>
-                    <td>6,25</td>
-                    <td>2902,9</td>
-                    <td>16,27%</td>
-                    <td>49%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Западно-Казахстанская РЭК</div></td>
-                    <td>5,26</td>
-                    <td>967,3</td>
-                    <td>15,02%</td>
-                    <td>81,1%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Жамбылские электрические сети</div></td>
-                    <td>6,29</td>
-                    <td>1241,7</td>
-                    <td>15,93%</td>
-                    <td>68,7%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Кызылординская РЭК</div></td>
-                    <td>4,512</td>
-                    <td>870,602</td>
-                    <td>14,7%</td>
-                    <td>70%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">ТАТЭК</div></td>
-                    <td>5,95</td>
-                    <td>770,396</td>
-                    <td>14,7%</td>
-                    <td>66,9%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Алатау-Жарык (АЖК)</div></td>
-                    <td>5,95</td>
-                    <td>6837,774</td>
-                    <td>16,5%</td>
-                    <td>65,5%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Карагандинская РЭК</div></td>
-                    <td>4,8</td>
-                    <td>261,421</td>
-                    <td>13,6%</td>
-                    <td>80%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Жезказганская РЭК</div></td>
-                    <td>3,07</td>
-                    <td>1813</td>
-                    <td>7,52%</td>
-                    <td>59,67%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Атырау-Жарык</div></td>
-                    <td>4,87</td>
-                    <td>2096,754</td>
-                    <td>12,36%</td>
-                    <td>40%</td>
-                </tr>
-                <tr style="background-color: #ffc000">
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Астана РЭК</div></td>
-                    <td>3,11</td>
-                    <td>3352,2</td>
-                    <td>10,78%</td>
-                    <td>29%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">ВКО АО "Объединенная ЭнергоСервисная Комп."</div></td>
-                    <td>4,61</td>
-                    <td>3721,3</td>
-                    <td>9,83%</td>
-                    <td>81%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Павлодарская РЭК</div></td>
-                    <td>4,30</td>
-                    <td>2477,36</td>
-                    <td>7,74%</td>
-                    <td>58,75%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Жезказганская РЭК</div></td>
-                    <td>3,07</td>
-                    <td>1813</td>
-                    <td>7,52%</td>
-                    <td>59,67%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Северо-Казахстанская РЭК</div></td>
-                    <td>4,11</td>
-                    <td>1183,3</td>
-                    <td>8,3%</td>
-                    <td>76,64%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Мангистауская РЭК</div></td>
-                    <td>4,45</td>
-                    <td>3623,14</td>
-                    <td>4,29%</td>
-                    <td>66,2%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Межрегионэнерготранзит</div></td>
-                    <td>2,477</td>
-                    <td>1254,13</td>
-                    <td>4,26%</td>
-                    <td>85%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Энергосистема</div></td>
-                    <td>4,8</td>
-                    <td>1507,3</td>
-                    <td>13,2%</td>
-                    <td>66%</td>
-                </tr>
-                <tr>
-                    <td width="350px" style="text-align: start"><div style="margin-left: 10px">Караганды Жарык</div></td>
-                    <td>5,31</td>
-                    <td>2976</td>
-                    <td>7,68%</td>
-                    <td>70,2%</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="container">
-        <h3>Из сравнения видно что износ основных фондов (ОФ) у Астана РЭК наименьший.</h3>
-    </div>
-
-    <div class="container">
-        <div class="white-box graph">
-            <canvas id="myChart3"></canvas>
-        </div>
-    </div>
-
     <script src="/static/script/chart.min.js"></script>
     <script src="/static/script/chartjs-plugin-datalabels.min.js"></script>
     <script>
@@ -465,7 +99,8 @@
                         position: 'top'
                     },
                     title: {
-                        display: false
+                        display: true,
+                        text: 'Показатели основной деятельности'
                     }
                 },
                 scales: {
@@ -577,7 +212,8 @@
                         position: 'top'
                     },
                     title: {
-                        display: false
+                        display: true,
+                        text: 'Динамика развития электросетевого оборудования'
                     }
                 },
                 scales: {
@@ -625,52 +261,67 @@
         const myChart2 = new Chart(ctx2, config2);
     </script>
     <script>
-        let colors = [];
-        for (let i = 0; i < 20; ++i) {
-            if (i === 11) {
-                colors.push('#ffc000');
-            } else {
-                colors.push('#115cc5');
-            }
-        }
-        const data3 = {
-            labels: ['Кокшетау-Энерго', 'Акмолинская РЭК', 'Онтустик Жарык Транзит РЭК', 'Западно-Казахстанская РЭК',
-            'Жамбылские электрические сети', 'Кызылординская РЭК', 'ТАТЭК', 'Алатау-Жарык (АЖК)', 'Карагандинская РЭК',
-            'Жезказганская РЭК', 'Атырау-Жарык', 'Астана РЭК', 'ВКО АО "Объединенная ЭнергоСервисная Комп."',
-                'Павлодарская РЭК', 'Жезказганская РЭК', 'Северо-Казахстанская РЭК', 'Мангистауская РЭК',
-                'Межрегионэнерготранзит', 'Энергосистема', 'Караганды Жарык'],
-            datasets: [
-                {
-                    label: 'Износ основных фондов, %',
-                    data: [57.5, 66, 49, 81.1, 68.7, 70, 66.9, 65.5, 80, 59.7, 40, 29, 81, 58.8, 59.7, 76.6, 66.2,
-                        85, 66, 70.2],
-                    backgroundColor: colors,
-                    borderColor: colors,
+        function make_graph3() {
+            let colors = [];
+            for (let i = 0; i < 20; ++i) {
+                if (i === 0) {
+                    colors.push('#ffc000');
+                } else {
+                    colors.push('#39449b');
                 }
-            ]
-        };
-
-        const config3 = {
-            type: 'bar',
-            data: data3,
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    title: {
-                        display: true,
-                        text: 'Износ основных фондов, %'
-                    }
-                },
-                suggestedMin: 0,
-                suggestedMax: 90
             }
-        };
 
-        const ctx3 = document.getElementById('myChart3').getContext('2d');
-        const myChart3 = new Chart(ctx3, config3);
+            const data3 = {
+                labels: ['Астана РЭК', 'Атырау-Жарык', 'Онтустик Жарык Транзит РЭК', 'Кокшетау-Энерго', 'Павлодарская РЭК',
+                    'Жезказганская РЭК', 'Алатау-Жарык (АЖК)', 'Акмолинская РЭК', 'Энергосистема', 'Мангистауская РЭК', 'ТАТЭК',
+                    'Жамбылские электрические сети', 'Кызылординская РЭК', 'Караганды Жарык', 'Северо-Казахстанская РЭК',
+                    'Карагандинская РЭК', 'ВКО АО "Объединенная ЭнергоСервисная Комп."', 'Запано-Казахстанская РЭК',
+                    'Межрегионэнерготранзит'],
+                datasets: [
+                    {
+                        label: 'Износ основных фондов, %',
+                        data: [29, 40, 49, 57.5, 58.8, 59.7, 65.5, 66, 66, 66.2, 66.9, 68.7, 70, 70.2, 76.6, 80, 81, 81.1,
+                            85],
+                        backgroundColor: colors,
+                        borderColor: colors,
+                    }
+                ]
+            };
+
+            const config3 = {
+                type: 'bar',
+                data: data3,
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Износ основных фондов, %'
+                        }
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 90
+                }
+            };
+            const ctx3 = document.getElementById('myChart3').getContext('2d');
+            const myChart3 = new Chart(ctx3, config3);
+        }
+
+        function onEntry(entry) {
+            entry.forEach(change => {
+                if (change.isIntersecting) {
+                    if (Chart.getChart('myChart3') === undefined) {
+                        make_graph3();
+                    }
+                }
+            });
+        }
+        let options = { threshold: [0.5] };
+        let observer = new IntersectionObserver(onEntry, options);
+        observer.observe(document.querySelector('.on-observe3'));
     </script>
 {% endblock %}
