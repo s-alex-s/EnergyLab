@@ -26,6 +26,16 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="white-box graph" style="margin-right: 20px;">
+            <canvas id="myChart4" class="on-observe4"></canvas>
+        </div>
+
+        <div class="white-box graph">
+            <canvas id="myChart5" class="on-observe5"></canvas>
+        </div>
+    </div>
+
     <div class="container" style="margin-top: 100px">
         <table cellspacing="0" class="table1">
             <tbody>
@@ -323,5 +333,101 @@
         let options = { threshold: [0.5] };
         let observer = new IntersectionObserver(onEntry, options);
         observer.observe(document.querySelector('.on-observe3'));
+    </script>
+    <script>
+        function make_graph4() {
+            const data4 = {
+                labels: ['2017 г', '2018 г', '2019 г', '2020 г'],
+                datasets: [
+                    {
+                        label: 'Индексы надежности электроснабжения',
+                        data: [0.97, 1.2, 0.7, 0.4],
+                        backgroundColor: '#39449b',
+                        borderColor: '#39449b',
+                    }
+                ]
+            };
+
+            const config4 = {
+                type: 'bar',
+                data: data4,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        },
+                        title: {
+                            display: true,
+                            text: 'SAIDI продолжительнось перерывов в электроснабжении, часов в год'
+                        }
+                    }
+                }
+            };
+
+            const ctx4 = document.getElementById('myChart4').getContext('2d');
+            const myChart4 = new Chart(ctx4, config4);
+        }
+
+        function onEntry2(entry) {
+            entry.forEach(change => {
+                if (change.isIntersecting) {
+                    if (Chart.getChart('myChart4') === undefined) {
+                        make_graph4();
+                    }
+                }
+            });
+        }
+        let options2 = { threshold: [0.5] };
+        let observer2 = new IntersectionObserver(onEntry2, options2);
+        observer2.observe(document.querySelector('.on-observe4'));
+    </script>
+    <script>
+        function make_graph5() {
+            const data5 = {
+                labels: ['2017 г', '2018 г', '2019 г', '2020 г'],
+                datasets: [
+                    {
+                        label: 'Индексы надежности электроснабжения',
+                        data: [0.5, 0.7, 0.6, 0.3],
+                        backgroundColor: '#39449b',
+                        borderColor: '#39449b',
+                    }
+                ]
+            };
+
+            const config5 = {
+                type: 'bar',
+                data: data5,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        },
+                        title: {
+                            display: true,
+                            text: 'SAIFI частота перерывов в электроснабжении, раз в год'
+                        }
+                    }
+                }
+            };
+
+            const ctx5 = document.getElementById('myChart5').getContext('2d');
+            const myChart5 = new Chart(ctx5, config5);
+        }
+
+        function onEntry3(entry) {
+            entry.forEach(change => {
+                if (change.isIntersecting) {
+                    if (Chart.getChart('myChart5') === undefined) {
+                        make_graph5();
+                    }
+                }
+            });
+        }
+        let options3 = { threshold: [0.5] };
+        let observer3 = new IntersectionObserver(onEntry3, options3);
+        observer3.observe(document.querySelector('.on-observe5'));
     </script>
 {% endblock %}

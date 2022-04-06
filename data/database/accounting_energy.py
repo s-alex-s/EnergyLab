@@ -10,7 +10,7 @@ class AccountingEnergy(SqlAlchemyBase):
     factory_PU = sqlalchemy.Column(sqlalchemy.String, nullable=False)
     system_type = sqlalchemy.Column(sqlalchemy.String, nullable=False)
     calc_coefficient = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
-    accuracy_class = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
+    accuracy_class = sqlalchemy.Column(sqlalchemy.String, nullable=False)
 
     object_id = sqlalchemy.Column(sqlalchemy.Integer,
                                   sqlalchemy.ForeignKey('Objects.id'))
