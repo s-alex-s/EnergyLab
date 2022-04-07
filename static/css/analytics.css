@@ -24,6 +24,14 @@ td {
     width: 45%;
 }
 
+.graph2 {
+    width: 40%;
+}
+
+.big-graph {
+    width: 50%;
+}
+
 .white-box {
     display: flex;
     justify-content: center;
@@ -34,4 +42,53 @@ td {
     border-radius: 10px;
     margin-top: 30px;
     box-sizing: border-box;
+}
+
+.white-box2 {
+    padding: 20px 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+.white-box-size {
+    width: 30%;
+    height: 35vw;
+    overflow-y: scroll;
+}
+
+.scroll-box {
+    width: 100%;
+}
+.scroll-box img {
+    width: 100%;
+    height: auto;
+}
+
+.year-button {
+    transition: all 0.2s ease-in-out;
+}
+.year-button:hover {
+    cursor: pointer;
+    background-color: #031052;
+    color: white;
+}
+.year-active {
+    background-color: #031052 !important;
+    color: white;
+}
+.white-box-button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+.info2 {
+    display: none;
 }

@@ -261,115 +261,115 @@
         }
 
 
-            let data_key2 = "2018";
-            make_graph2(data_key2);
+        let data_key2 = "2018";
+        make_graph2(data_key2);
 
-            function change_data_key2(key, date = false) {
-                if (!date) {
-                    data_key2 = key;
-                    make_graph2(data_key2);
-                } else {
-                    let data2 = document.getElementById('datapick2').value.split('.');
-                    make_graph2(data2, true);
-                }
-
-                let year_button = document.getElementsByClassName('year-button2');
-                for (let i = 0; i < year_button.length; ++i) {
-                    if (year_button[i].classList.contains('year-active2') && year_button[i].textContent !== key) {
-                        year_button[i].classList.remove('year-active2');
-                    }
-                    if (year_button[i].textContent === key) {
-                        year_button[i].classList.add('year-active2');
-                    }
-                }
+        function change_data_key2(key, date = false) {
+            if (!date) {
+                data_key2 = key;
+                make_graph2(data_key2);
+            } else {
+                let data2 = document.getElementById('datapick2').value.split('.');
+                make_graph2(data2, true);
             }
 
-            function make_graph2(data_key, date = false) {
-                const datapoints2 = {{ airtemp|tojson }};
-                let data = {};
-                let text = 'Температура воздуха, ';
+            let year_button = document.getElementsByClassName('year-button2');
+            for (let i = 0; i < year_button.length; ++i) {
+                if (year_button[i].classList.contains('year-active2') && year_button[i].textContent !== key) {
+                    year_button[i].classList.remove('year-active2');
+                }
+                if (year_button[i].textContent === key) {
+                    year_button[i].classList.add('year-active2');
+                }
+            }
+        }
 
-                if (!date) {
-                    data = {
-                        labels: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь",
-                        "Ноябрь", "Декабрь"],
-                        datasets: [
-                            {
-                                label: 'Температура воздуха по цельсию (Среднее значение)',
-                                data: datapoints2[data_key],
-                                borderColor: '#0e5cf8',
-                                backgroundColor: '#0e5cf8',
-                                fill: false,
-                                cubicInterpolationMode: 'monotone',
-                                tension: 0.4
-                            }
-                        ]
-                    };
-                    text = text + data_key + ' год';
-                } else {
-                    let labels = [];
-                    let datasets_data = [];
+        function make_graph2(data_key, date = false) {
+            const datapoints2 = {{ airtemp|tojson }};
+            let data = {};
+            let text = 'Температура воздуха, ';
 
-                    for (let i = 0; i < datapoints2[data_key[2] + '_in'][data_key[1]][data_key[0]].length; ++i) {
-                        labels.push(datapoints2[data_key[2] + '_in'][data_key[1]][data_key[0]][i][0]);
-                        datasets_data.push(datapoints2[data_key[2] + '_in'][data_key[1]][data_key[0]][i][1]);
-                    }
+            if (!date) {
+                data = {
+                    labels: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь",
+                    "Ноябрь", "Декабрь"],
+                    datasets: [
+                        {
+                            label: 'Температура воздуха по цельсию (Среднее значение)',
+                            data: datapoints2[data_key],
+                            borderColor: '#0e5cf8',
+                            backgroundColor: '#0e5cf8',
+                            fill: false,
+                            cubicInterpolationMode: 'monotone',
+                            tension: 0.4
+                        }
+                    ]
+                };
+                text = text + data_key + ' год';
+            } else {
+                let labels = [];
+                let datasets_data = [];
 
-                    data = {
-                        labels: labels,
-                        datasets: [
-                            {
-                                label: 'Температура воздуха по цельсию',
-                                data: datasets_data,
-                                borderColor: '#0e5cf8',
-                                backgroundColor: '#0e5cf8',
-                                fill: false,
-                                cubicInterpolationMode: 'monotone',
-                                tension: 0.4
-                            }
-                        ]
-                    };
-                    text = text + data_key.join('.');
+                for (let i = 0; i < datapoints2[data_key[2] + '_in'][data_key[1]][data_key[0]].length; ++i) {
+                    labels.push(datapoints2[data_key[2] + '_in'][data_key[1]][data_key[0]][i][0]);
+                    datasets_data.push(datapoints2[data_key[2] + '_in'][data_key[1]][data_key[0]][i][1]);
                 }
 
-                const ctx = document.getElementById('myChart2').getContext('2d');
-                let chartStatus = Chart.getChart('myChart2');
-                if (chartStatus !== undefined) {
-                    chartStatus.destroy();
-                }
-                const myChart2 = new Chart(ctx, {
-                    type: 'line',
-                    data: data,
-                    options: {
-                        responsive: true,
-                        plugins: {
+                data = {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Температура воздуха по цельсию',
+                            data: datasets_data,
+                            borderColor: '#0e5cf8',
+                            backgroundColor: '#0e5cf8',
+                            fill: false,
+                            cubicInterpolationMode: 'monotone',
+                            tension: 0.4
+                        }
+                    ]
+                };
+                text = text + data_key.join('.');
+            }
+
+            const ctx = document.getElementById('myChart2').getContext('2d');
+            let chartStatus = Chart.getChart('myChart2');
+            if (chartStatus !== undefined) {
+                chartStatus.destroy();
+            }
+            const myChart2 = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: text
+                        },
+                    },
+                    interaction: {
+                        intersect: false,
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true
+                            }
+                        },
+                        y: {
+                            display: true,
                             title: {
                                 display: true,
-                                text: text
+                                text: 'Температура воздуха по цельсию'
                             },
-                        },
-                        interaction: {
-                            intersect: false,
-                        },
-                        scales: {
-                            x: {
-                                display: true,
-                                title: {
-                                    display: true
-                                }
-                            },
-                            y: {
-                                display: true,
-                                title: {
-                                    display: true,
-                                    text: 'Температура воздуха по цельсию'
-                                },
-                                suggestedMin: -30,
-                                suggestedMax: 30
-                            }
+                            suggestedMin: -30,
+                            suggestedMax: 30
                         }
-                    },
-                });
-            }
+                    }
+                },
+            });
+        }
     </script>
 {% endblock %}
