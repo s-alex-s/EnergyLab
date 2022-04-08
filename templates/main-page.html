@@ -35,20 +35,20 @@
             <div class="info-box">
                 <div style="font-size: 1.8vw">Тепловые энергостанции в городе Нур-Султан</div>
 
-                {% for i in stations %}
-                    <div id="{{ i[0] }}" class="info-check" onclick="check_click('{{ i[0] }}')">
-                        <div class="info-container">
-                            <div>{{ i[0] }}</div>
-                            <div class="sign">+</div>
-                        </div>
-                        <div class="info-addr">
-                            <div style="display: flex">
-                                <div style="margin-right: 10px">Адрес:</div>
-                                <div style="font-weight: lighter">{{ i[1] }}</div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+                <div class="select-box">
+                    <select name="station" id="station" onclick="on_select()">
+                        {% for i in stations %}
+                            <option value="{{ i['name'] }}">{{ i['name'] }}</option>
+                        {% endfor %}
+                    </select>
+                    <img src="/static/img/down-arrow.png" alt="">
+                </div>
+
+                <div class="info-check" id="info-check">
+                    <div style="margin-bottom: 20px">Адрес ТЭЦ:  <span id="object_addr" style="font-weight: lighter"></span></div>
+                    <div><a href="" id="object_link">Больше информации</a></div>
+                </div>
+
             </div>
         </div>
         <div class="box" style="overflow: hidden">
@@ -123,6 +123,19 @@
     <script src="/static/script/chart.min.js"></script>
     <script src="/static/script/chartjs-plugin-datalabels.min.js"></script>
     <script src="/static/script/air-datepicker/dist/air-datepicker.js"></script>
+    <script>
+        function on_select() {
+            let d = document.querySelector('select');
+            let info = {{ stations2|tojson }};
+
+            let v = document.getElementById('object_addr').textContent = info[d.value]['address'];
+            let v2 = document.getElementById('info-check');
+            let link = document.getElementById('object_link');
+            link['href'] = "station-info/" + info[d.value]['id'];
+            link.style.display = 'block';
+            v2.style.opacity = '1';
+        }
+    </script>
     <script>
         function check_click(obj) {
             let object = document.getElementById(obj);

@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <link rel="stylesheet" href="/static/css/station-info.css">
+
+    <div class="container">
+        <h1>{{ station.station_name }}</h1>
+    </div>
+
+    <div class="container">
+        <table border="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th rowspan="2">Тип котлоагрегата (год установки)</th>
+                    <th colspan="2">Мощность</th>
+                    <th colspan="3">Потребление топлива 2019г</th>
+                    <th>Производство тепла 2019г</th>
+                    <th colspan="3">Потребление топлива 2020г</th>
+                    <th>Производство тепла 2020г</th>
+                    <th colspan="3">Потребление топлива 2021г</th>
+                    <th>Производство тепла 2021г</th>
+                </tr>
+                <tr>
+                    <th>Паспорт</th>
+                    <th>Факт</th>
+                    <th>Газ, тыс.м3</th>
+                    <th>Мазут, тнт</th>
+                    <th>Уголь, тнт</th>
+                    <th>Гкал</th>
+
+                    <th>Газ, тыс.м3</th>
+                    <th>Мазут, тнт</th>
+                    <th>Уголь, тнт</th>
+                    <th>Гкал</th>
+
+                    <th>Газ, тыс.м3</th>
+                    <th>Мазут, тнт</th>
+                    <th>Уголь, тнт</th>
+                    <th>Гкал</th>
+                </tr>
+
+                {% for i in station.boiler_unit_type %}
+                    <tr>
+                        <td>{{ i.boiler_name }}</td>
+                        <td>{{ i.power_passport }}</td>
+                        <td>{{ i.power_fact }}</td>
+
+                        <td>{{ i.fuel2019_gas }}</td>
+                        <td>{{ i.fuel2019_masut }}</td>
+                        <td>{{ i.fuel2019_ugol }}</td>
+                        <td>{{ i.warm2019 }}</td>
+
+                        <td>{{ i.fuel2020_gas }}</td>
+                        <td>{{ i.fuel2020_masut }}</td>
+                        <td>{{ i.fuel2020_ugol }}</td>
+                        <td>{{ i.warm2020 }}</td>
+
+                        <td>{{ i.fuel2021_gas }}</td>
+                        <td>{{ i.fuel2021_masut }}</td>
+                        <td>{{ i.fuel2021_ugol }}</td>
+                        <td>{{ i.warm2021 }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <table border="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th rowspan="2">Наименование присоединения и объектов</th>
+                    <th colspan="5">СИ: Учет энергоресурсов</th>
+                </tr>
+
+                <tr>
+                    <th>Место установки</th>
+                    <th>Заводской №ПУ</th>
+                    <th>Тип</th>
+                    <th>Расч. коэф.</th>
+                    <th>Класс точности</th>
+                </tr>
+
+                {% for object in station.objects %}
+                    {% for ac_en in object.accounting_energy %}
+                        <tr>
+                            <td>{{ object.object_name }}</td>
+                            <td>{{ ac_en.name }}</td>
+                            <td>{{ ac_en.factory_PU }}</td>
+                            <td>{{ ac_en.system_type }}</td>
+                            <td>{{ ac_en.calc_coefficient }}</td>
+                            <td>{{ ac_en.accuracy_class }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <div style="width: 45%">
+            <table border="0" cellspacing="0" style="width: 100%">
+                <tbody>
+                    <tr>
+                        <th>СИ: Учет потребления воды</th>
+                    </tr>
+
+                    {% for i in station.accounting_water %}
+                        <tr>
+                            <td>{{ i.name }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <table border="0" cellspacing="0" style="width: 45%">
+            <tbody>
+                <tr>
+                    <th colspan="3">СИ: Учет тепла</th>
+                </tr>
+                <tr>
+                    <th>Тип прибора</th>
+                    <th>Заводской номер</th>
+                    <th>Место установки</th>
+                </tr>
+
+                {% for i in station.accounting_warm %}
+                    <tr>
+                        <td>{{ i.device_type }}</td>
+                        <td>{{ i.factory_number }}</td>
+                        <td>{{ i.placement }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

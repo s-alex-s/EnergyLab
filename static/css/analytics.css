@@ -4,22 +4,6 @@
     width: 100%;
 }
 
-table {
-    background-color: white;
-    border-bottom: 6px;
-}
-
-.table1 th {
-    background-color: #031052;
-    color: white;
-    padding: 10px 15px;
-    border: 1px solid white;
-}
-
-td {
-    text-align: center;
-}
-
 .graph {
     width: 45%;
 }

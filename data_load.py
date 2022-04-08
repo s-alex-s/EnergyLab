@@ -2,7 +2,12 @@ from data.Standart import db_session
 
 from data.database.winddata import Winddata
 from data.database.airtemp import AirTemp
-
+from data.database.station import Station
+from data.database.boiler import Boiler
+from data.database.objects import Objects
+from data.database.accounting_water import AccountingWater
+from data.database.accounting_warm import AccountingWarm
+from data.database.accounting_energy import AccountingEnergy
 
 db_session.global_init('db/database.db')
 
@@ -41,7 +46,6 @@ for year in list(winddata_json.keys()):
             time_m = list(filter(lambda z: z.date.day == int(formated_day), day_m))
             for time in time_m:
                 winddata_json[key][str(formated_month)][str(formated_day)].append((str(time.date.time()), time.speed))
-
 
 airtemp = db_sess.query(AirTemp).all()
 airtemp_json = dict()
@@ -82,3 +86,16 @@ winddata_max_min = [max([int(i) for i in winddata_json.keys() if '_in' not in i]
                     min([int(i) for i in winddata_json.keys() if '_in' not in i])]
 airtemp_max_min = [max([int(i) for i in airtemp_json.keys() if '_in' not in i]),
                    min([int(i) for i in airtemp_json.keys() if '_in' not in i])]
+
+stations_main_p = []
+stations_main_p2 = dict()
+for i in db_sess.query(Station).all():
+    stations_main_p.append({
+        'name': i.station_name,
+        'address': i.address,
+        'boilers': list(map(lambda x: x.boiler_name, i.boiler_unit_type)),
+        'id': str(i.id)
+    })
+    stations_main_p2[i.station_name] = {'address': i.address,
+                                        'boilers': list(map(lambda x: x.boiler_name, i.boiler_unit_type)),
+                                        'id': i.id}
