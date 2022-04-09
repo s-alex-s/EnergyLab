@@ -136,6 +136,8 @@
     background: none;
     color: white;
     appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 .select-box select option {
     color: black;
