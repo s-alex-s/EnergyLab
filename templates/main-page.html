@@ -62,13 +62,13 @@
                 <div class="container-info">
                     {% for i in winddata.keys() %}
                         {% if loop.index == 1 and '_in' not in i %}
-                            <div onclick="change_data_key({{ i }})" class="white-box year-button year-active">
+                            <div onclick="change_data_key({{ i }})" class="white-box year-button year-active {{ i }}">
                                 <div>
                                     <div>{{ i }}</div>
                                 </div>
                             </div>
                         {% elif '_in' not in i %}
-                            <div onclick="change_data_key({{ i }})" class="white-box year-button">
+                            <div onclick="change_data_key({{ i }})" class="white-box year-button {{ i }}">
                                 <div>
                                     <div>{{ i }}</div>
                                 </div>
@@ -83,7 +83,7 @@
 
                 <div class="container-graph">
                     <div class="white-box graph">
-                      <canvas id="myChart"></canvas>
+                      <canvas id="myChart" class="on-observe"></canvas>
                     </div>
                 </div>
             </div>
@@ -92,13 +92,13 @@
                 <div class="container-info">
                     {% for i in airtemp.keys() %}
                         {% if loop.index == 1 and '_in' not in i %}
-                            <div onclick="change_data_key2({{ i }})" class="white-box year-button2 year-active2">
+                            <div onclick="change_data_key2({{ i }})" class="white-box year-button2 year-active2 {{ i }}">
                                 <div>
                                     <div>{{ i }}</div>
                                 </div>
                             </div>
                         {% elif '_in' not in i %}
-                            <div onclick="change_data_key2({{ i }})" class="white-box year-button2">
+                            <div onclick="change_data_key2({{ i }})" class="white-box year-button2 {{ i }}">
                                 <div>
                                     <div>{{ i }}</div>
                                 </div>
@@ -113,7 +113,7 @@
 
                 <div class="container-graph">
                     <div class="white-box graph">
-                      <canvas id="myChart2"></canvas>
+                      <canvas id="myChart2" class="on-observe2"></canvas>
                     </div>
                 </div>
             </div>
@@ -163,7 +163,6 @@
     </script>
     <script>
         let data_key = "2019";
-        make_graph1(data_key);
 
         function change_data_key(key, date = false) {
             if (!date) {
@@ -176,10 +175,10 @@
 
             let year_button = document.getElementsByClassName('year-button');
             for (let i = 0; i < year_button.length; ++i) {
-                if (year_button[i].classList.contains('year-active') && year_button[i].textContent !== key) {
+                if (year_button[i].classList.contains('year-active') && !year_button[i].classList.contains(key)) {
                     year_button[i].classList.remove('year-active');
                 }
-                if (year_button[i].textContent === key) {
+                if (year_button[i].classList.contains(key)) {
                     year_button[i].classList.add('year-active');
                 }
             }
@@ -273,9 +272,21 @@
             });
         }
 
+        function onEntry(entry) {
+            entry.forEach(change => {
+                if (change.isIntersecting) {
+                    if (Chart.getChart('myChart') === undefined) {
+                        make_graph1(data_key);
+                    }
+                }
+            });
+        }
+        let options = { threshold: [0.5] };
+        let observer = new IntersectionObserver(onEntry, options);
+        observer.observe(document.querySelector('.on-observe'));
+
 
         let data_key2 = "2018";
-        make_graph2(data_key2);
 
         function change_data_key2(key, date = false) {
             if (!date) {
@@ -288,10 +299,10 @@
 
             let year_button = document.getElementsByClassName('year-button2');
             for (let i = 0; i < year_button.length; ++i) {
-                if (year_button[i].classList.contains('year-active2') && year_button[i].textContent !== key) {
+                if (year_button[i].classList.contains('year-active2') && !year_button[i].classList.contains(key)) {
                     year_button[i].classList.remove('year-active2');
                 }
-                if (year_button[i].textContent === key) {
+                if (year_button[i].classList.contains(key)) {
                     year_button[i].classList.add('year-active2');
                 }
             }
@@ -384,5 +395,18 @@
                 },
             });
         }
+
+        function onEntry2(entry) {
+            entry.forEach(change => {
+                if (change.isIntersecting) {
+                    if (Chart.getChart('myChart2') === undefined) {
+                        make_graph2(data_key2);
+                    }
+                }
+            });
+        }
+        let options2 = { threshold: [0.5] };
+        let observer2 = new IntersectionObserver(onEntry2, options2);
+        observer2.observe(document.querySelector('.on-observe2'));
     </script>
 {% endblock %}

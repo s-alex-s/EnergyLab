@@ -216,10 +216,6 @@
     margin-top: 50px;
 }
 
-#myChart {
-    width: 100% !important;
-}
-
 #datapick, #datapick2 {
     padding: 10px;
     font: inherit;
