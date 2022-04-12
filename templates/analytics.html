@@ -17,18 +17,22 @@
         </div>
 
         <div class="container">
-            <div class="white-box graph" style="margin-right: 20px;">
+            <div class="white-box" style="margin-right: 20px; width: 40%;">
                 <canvas id="myChart"></canvas>
             </div>
 
-            <div class="white-box graph">
-                <canvas id="myChart2"></canvas>
+            <div class="white-box" style="width: 50%;">
+                <canvas id="myChart3"></canvas>
             </div>
         </div>
 
         <div class="container">
-            <div class="white-box" style="width: 1000px;">
-                <canvas id="myChart3" class="on-observe3"></canvas>
+            <div class="white-box graph" style="margin-right: 20px">
+                <canvas id="myChart2"></canvas>
+            </div>
+
+            <div class="white-box graph">
+                <canvas id="myChart8"></canvas>
             </div>
         </div>
 
@@ -106,6 +110,8 @@
 
             Chart.getChart('myChart').destroy();
             Chart.getChart('myChart2').destroy();
+            Chart.getChart('myChart3').destroy();
+            Chart.getChart('myChart8').destroy();
 
             let chartStatus = Chart.getChart('myChart6');
             if (chartStatus !== undefined) {
@@ -113,11 +119,6 @@
             }
 
             chartStatus = Chart.getChart('myChart7');
-            if (chartStatus !== undefined) {
-                chartStatus.destroy();
-            }
-
-            chartStatus = Chart.getChart('myChart3');
             if (chartStatus !== undefined) {
                 chartStatus.destroy();
             }
@@ -131,8 +132,10 @@
 
             make_graph();
             make_graph2();
+            make_graph3();
             make_graph6();
             make_graph7();
+            make_graph8();
         }
     </script>
     <script>
@@ -389,18 +392,7 @@
             const myChart3 = new Chart(ctx3, config3);
         }
 
-        function onEntry(entry) {
-            entry.forEach(change => {
-                if (change.isIntersecting) {
-                    if (Chart.getChart('myChart3') === undefined) {
-                        make_graph3();
-                    }
-                }
-            });
-        }
-        let options = { threshold: [0.5] };
-        let observer = new IntersectionObserver(onEntry, options);
-        observer.observe(document.querySelector('.on-observe3'));
+        make_graph3();
     </script>
     <script>
         function make_graph4() {
@@ -665,5 +657,54 @@
                 },
             });
         }
+    </script>
+    <script>
+        function make_graph8() {
+            const data8 = {
+                labels: ['2016 г', '2017 г', '2018 г', '2019 г', '2020 г'],
+                datasets: [
+                    {
+                        label: 'ПС-220кВ',
+                        data: [3, 3, 3, 3, 3],
+                        backgroundColor: '#39449b',
+                        borderColor: '#39449b',
+                    },
+                    {
+                        label: 'ПС-110кВ',
+                        data: [27, 29, 28, 28, 29],
+                        backgroundColor: '#ff5f5f',
+                        borderColor: '#ff5f5f',
+                    },
+                    {
+                        label: 'РП, ТП, КТП-10/0,4кВ',
+                        data: [1177, 1318, 1366, 1395, 1434],
+                        backgroundColor: '#18a867',
+                        borderColor: '#18A867FF',
+                    }
+                ]
+            };
+
+            const config8 = {
+                type: 'bar',
+                data: data8,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Динамика развития электросетевого оборудования'
+                        }
+                    }
+                }
+            };
+
+            const ctx8 = document.getElementById('myChart8').getContext('2d');
+            const myChart8 = new Chart(ctx8, config8);
+        }
+
+        make_graph8();
     </script>
 {% endblock %}
