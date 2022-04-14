@@ -16,6 +16,19 @@ header {
     background-color: white;
 }
 
+.languages {
+    display: flex;
+    justify-content: space-between;
+    width: 70px;
+    margin-left: 100px;
+}
+.languages a {
+    color: black !important;
+}
+
+.logo {
+    margin-right: auto;
+}
 .logo img {
     width: 220px;
     height: auto;
@@ -71,7 +84,4 @@ footer {
 
 .flex-box-footer-info {
     width: 500px;
-}
-.flex-box-footer-info img {
-    margin-bottom: 10px;
 }

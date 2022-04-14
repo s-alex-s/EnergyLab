@@ -1,25 +1,105 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
+from flask_babel import Babel
 
 from data.Standart import db_session
 from data_load import winddata_json, airtemp_json, winddata_max_min, airtemp_max_min, stations_main_p, stations_main_p2
+from data_load_en import stations_main_p_en, stations_main_p2_en
+from data_load_kk import stations_main_p_kk, stations_main_p2_kk
 
 from data.database.station import Station
+from data.database.station_en import StationEN
+from data.database.station_kk import StationKK
 
 
 db_session.global_init('db/database.db')
 
 app = Flask(__name__)
+babel = Babel(app)
+
+
+BASE_URL = 'https://energylab.kz/'
+current_lang = 'ru'
+
+
+@app.context_processor
+def utility_processor():
+    def dec_lang():
+        global current_lang
+
+        LANGS = {
+            'ru': 'none',
+            'en': 'none',
+            'kk': 'none',
+            current_lang: 'underline'
+        }
+
+        return LANGS
+    return dict(LANGS=dec_lang())
+
+
+@babel.localeselector
+def get_locale():
+    global current_lang
+
+    return current_lang
+
+
+@app.route('/change_lang/ru')
+def ru():
+    global current_lang
+
+    current_lang = 'ru'
+    if request.referrer:
+        return redirect(request.referrer)
+    return redirect(BASE_URL)
+
+
+@app.route('/change_lang/en')
+def en():
+    global current_lang
+
+    current_lang = 'en'
+    if request.referrer:
+        return redirect(request.referrer)
+    return redirect(BASE_URL)
+
+
+@app.route('/change_lang/kz')
+def kz():
+    global current_lang
+
+    current_lang = 'kk'
+    if request.referrer:
+        return redirect(request.referrer)
+    return redirect(BASE_URL)
 
 
 @app.route('/')
 def main_page():
-    return render_template('main-page.html',
-                           winddata=winddata_json,
-                           airtemp=airtemp_json,
-                           winddata_max_min=winddata_max_min,
-                           airtemp_max_min=airtemp_max_min,
-                           stations=stations_main_p,
-                           stations2=stations_main_p2)
+    if current_lang == 'ru':
+        return render_template('main-page.html',
+                               winddata=winddata_json,
+                               airtemp=airtemp_json,
+                               winddata_max_min=winddata_max_min,
+                               airtemp_max_min=airtemp_max_min,
+                               stations=stations_main_p,
+                               stations2=stations_main_p2)
+    elif current_lang == 'en':
+        return render_template('main-page.html',
+                               winddata=winddata_json,
+                               airtemp=airtemp_json,
+                               winddata_max_min=winddata_max_min,
+                               airtemp_max_min=airtemp_max_min,
+                               stations=stations_main_p_en,
+                               stations2=stations_main_p2_en)
+    elif current_lang == 'kk':
+        return render_template('main-page.html',
+                               winddata=winddata_json,
+                               airtemp=airtemp_json,
+                               winddata_max_min=winddata_max_min,
+                               airtemp_max_min=airtemp_max_min,
+                               stations=stations_main_p_kk,
+                               stations2=stations_main_p2_kk)
 
 
 @app.route('/analytics')
@@ -27,10 +107,20 @@ def analytics_page():
     return render_template('analytics.html')
 
 
+@app.route('/team')
+def team():
+    return render_template('team.html')
+
+
 @app.route('/station-info/<int:station_id>')
 def object_info(station_id):
     db_sess = db_session.create_session()
-    station = db_sess.query(Station).get(station_id)
+    if current_lang == 'ru':
+        station = db_sess.query(Station).get(station_id)
+    elif current_lang == 'en':
+        station = db_sess.query(StationEN).get(station_id)
+    elif current_lang == 'kk':
+        station = db_sess.query(StationKK).get(station_id)
 
     json_data = dict()
     colors = [

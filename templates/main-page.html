@@ -13,19 +13,19 @@
         <div class="img1">
             <div class="carousel-titles">
                 <div style="font-size: 8vw">SMART CITY:</div>
-                <div>умный - значит энергоэффективный</div>
+                <div>{{ _('умный - значит энергоэффективный') }}</div>
             </div>
         </div>
         <div class="img2">
             <div class="carousel-titles">
-                <div>ЭНЕРГОСБЕРЕЖЕНИЕ.</div>
-                <div>ЧТО СДЕЛАНО ЗА 10 ЛЕТ?</div>
+                <div>{{ _('ЭНЕРГОСБЕРЕЖЕНИЕ.') }}</div>
+                <div>{{ _('ЧТО СДЕЛАНО ЗА 10 ЛЕТ?') }}</div>
             </div>
         </div>
         <div class="img3">
             <div class="carousel-titles">
-                <div>МЕЖДУНАРОДНОЕ</div>
-                <div>ЭНЕРГЕТИЧЕСКОЕ АГЕНТСТВО</div>
+                <div>{{ _('МЕЖДУНАРОДНОЕ') }}</div>
+                <div>{{ _('ЭНЕРГЕТИЧЕСКОЕ АГЕНТСТВО') }}</div>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
     <div class="container">
         <div class="box">
             <div class="info-box">
-                <div style="font-size: 1.8vw">Тепловые энергостанции в городе Нур-Султан</div>
+                <div style="font-size: 1.6vw">{{ _('Тепловые энергостанции в городе Нур-Султан') }}</div>
 
                 <div class="select-box">
                     <select name="station" id="station" onclick="on_select()">
@@ -45,14 +45,18 @@
                 </div>
 
                 <div class="info-check" id="info-check">
-                    <div style="margin-bottom: 20px">Адрес ТЭЦ:  <span id="object_addr" style="font-weight: lighter"></span></div>
-                    <div><a href="" id="object_link">Больше информации</a></div>
+                    <div style="margin-bottom: 20px">{{ _('Адрес ТЭЦ: ') }}<span id="object_addr" style="font-weight: lighter"></span></div>
+                    <div><a href="" id="object_link">{{ _('Больше информации') }}</a></div>
                 </div>
 
             </div>
         </div>
         <div class="box" style="overflow: hidden">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0871ca6c0585f092347d26434fa39c28b991d72f1f2bd99880f2757b92e7355f&amp;width=100%25&amp;height=720&amp;lang=ru_RU&amp;scroll=true"></script>
+            {% if LANGS['ru'] != 'none' or LANGS['kk'] != 'none' %}
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0871ca6c0585f092347d26434fa39c28b991d72f1f2bd99880f2757b92e7355f&amp;width=100%25&amp;height=720&amp;lang=ru_RU&amp;scroll=true"></script>
+            {% elif LANGS['en'] != 'none' %}
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A21b95b5b71a1624be3f97393750b2d454973218f6782cb276105b549ab34a176&amp;width=100%25&amp;height=720&amp;lang=ru_RU&amp;scroll=true"></script>
+            {% endif %}
         </div>
     </div>
 
@@ -76,8 +80,8 @@
                         {% endif %}
                     {% endfor %}
                     <div style="display: flex">
-                        <input id="datapick" type="text" placeholder="Выберите дату" readonly>
-                        <div class="show-button" onclick="change_data_key(null, true)">Показать</div>
+                        <input id="datapick" type="text" placeholder="{{ _('Выберите дату') }}" readonly>
+                        <div class="show-button" onclick="change_data_key(null, true)">{{ _('Показать') }}</div>
                     </div>
                 </div>
 
@@ -106,8 +110,8 @@
                         {% endif %}
                     {% endfor %}
                     <div style="display: flex">
-                        <input id="datapick2" type="text" placeholder="Выберите дату" readonly>
-                        <div class="show-button" onclick="change_data_key2(null, true)">Показать</div>
+                        <input id="datapick2" type="text" placeholder="{{ _('Выберите дату') }}" readonly>
+                        <div class="show-button" onclick="change_data_key2(null, true)">{{ _('Показать') }}</div>
                     </div>
                 </div>
 
@@ -151,15 +155,60 @@
         }
     </script>
     <script>
-        new AirDatepicker('#datapick', {
-            minDate: '{{ winddata_max_min[1] }}.01.01',
-            maxDate: '{{ winddata_max_min[0] }}.12.31'
-        })
+        let locale_en = {
+            days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+            months: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
+            monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            today: 'Today',
+            clear: 'Clear',
+            dateFormat: 'dd.MM.yyyy',
+            timeFormat: 'HH:mm',
+            firstDay: 1
+        };
 
-        new AirDatepicker('#datapick2', {
+        let locale_ru = {
+            days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+            daysShort: ['Вос','Пон','Вто','Сре','Чет','Пят','Суб'],
+            daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+            months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+            monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+            today: 'Сегодня',
+            clear: 'Очистить',
+            dateFormat: 'dd.MM.yyyy',
+            timeFormat: 'HH:mm',
+            firstDay: 1
+        };
+
+        let locale_kk = {
+            days: ['Жексенбі', 'Дүйсенбі', 'Сейсенбі', 'Сәрсенбі', 'Бейсенбі', 'Жұма', 'Сенбі'],
+            daysShort: ['Жек','Дүй','Сей','Сәр','Бей','Жұма','Сен'],
+            daysMin: ['Жк','Дб','Сб','Сә','Бб','Жұ','Сн'],
+            months: ['Қаңтар', 'Ақпан', 'Наурыз', 'Сәуір', 'Мамыр', 'Маусым', 'Шілде', 'Тамыз', 'Қыркүйек', 'Қазан', 'Қараша', 'Желтоқсан'],
+            monthsShort: ['Қаң', 'Ақп', 'Нау', 'Сәу', 'Мам', 'Мау', 'Шіл', 'Там', 'Қыр', 'Қаз', 'Қар', 'Жел'],
+            today: 'Бүгін',
+            clear: 'Тазарту',
+            dateFormat: 'dd.MM.yyyy',
+            timeFormat: 'HH:mm',
+            firstDay: 1
+        };
+
+        let config = {
             minDate: '{{ airtemp_max_min[1] }}.01.01',
-            maxDate: '{{ airtemp_max_min[0] }}.12.31'
-        })
+            maxDate: '{{ airtemp_max_min[0] }}.12.31',
+        };
+
+        if ('{{ LANGS['ru'] }}' !== 'none') {
+            config.locale = locale_ru;
+        } else if ('{{ LANGS['en'] }}' !== 'none') {
+            config.locale = locale_en;
+        } else if ('{{ LANGS['kk'] }}' !== 'none') {
+            config.locale = locale_kk;
+        }
+
+        let date = new AirDatepicker('#datapick', config);
+        let date2 = new AirDatepicker('#datapick2', config);
     </script>
     <script>
         let data_key = "2019";
@@ -187,15 +236,15 @@
         function make_graph1(data_key, date = false) {
             const datapoints = {{ winddata|tojson }};
             let data = {};
-            let text = 'Скорость ветра, ';
+            let text = '{{ _('Скорость ветра, ') }}';
 
             if (!date) {
                 data = {
-                    labels: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь",
-                        "Ноябрь", "Декабрь"],
+                    labels: ['{{ _("Январь") }}', '{{ _("Февраль") }}', '{{ _("Март") }}', '{{ _("Апрель") }}', '{{ _("Май") }}',
+                        '{{ _("Июнь") }}', '{{ _("Июль") }}', '{{ _("Август") }}', '{{ _("Сентябрь") }}', '{{ _("Октябрь") }}', '{{ _("Ноябрь") }}', '{{ _("Декабрь") }}'],
                     datasets: [
                         {
-                            label: 'Скорость ветра м/с (Среднее значение)',
+                            label: '{{ _('Скорость ветра м/с (Среднее значение)') }}',
                             data: datapoints[data_key],
                             borderColor: '#E52B50',
                             fill: true,
@@ -205,7 +254,7 @@
                         }
                     ]
                 };
-                text = text + data_key + ' год';
+                text = text + data_key + "{{ _(' год') }}";
             } else {
                 let labels = [];
                 let datasets_data = [];
@@ -219,7 +268,7 @@
                     labels: labels,
                     datasets: [
                         {
-                            label: 'Скорость ветра м/с',
+                            label: '{{ _('Скорость ветра м/с') }}',
                             data: datasets_data,
                             borderColor: '#E52B50',
                             fill: true,
@@ -262,7 +311,7 @@
                             display: true,
                             title: {
                                 display: true,
-                                text: 'Скорость м/с'
+                                text: '{{ _('Скорость м/с') }}'
                             },
                             suggestedMin: 0,
                             suggestedMax: 10
@@ -311,15 +360,15 @@
         function make_graph2(data_key, date = false) {
             const datapoints2 = {{ airtemp|tojson }};
             let data = {};
-            let text = 'Температура воздуха, ';
+            let text = '{{ _('Температура воздуха, ') }}';
 
             if (!date) {
                 data = {
-                    labels: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь",
-                    "Ноябрь", "Декабрь"],
+                    labels: ['{{ _("Январь") }}', '{{ _("Февраль") }}', '{{ _("Март") }}', '{{ _("Апрель") }}', '{{ _("Май") }}',
+                        '{{ _("Июнь") }}', '{{ _("Июль") }}', '{{ _("Август") }}', '{{ _("Сентябрь") }}', '{{ _("Октябрь") }}', '{{ _("Ноябрь") }}', '{{ _("Декабрь") }}'],
                     datasets: [
                         {
-                            label: 'Температура воздуха по цельсию (Среднее значение)',
+                            label: '{{ _('Температура воздуха по цельсию (Среднее значение)') }}',
                             data: datapoints2[data_key],
                             borderColor: '#0e5cf8',
                             backgroundColor: '#0e5cf8',
@@ -329,7 +378,7 @@
                         }
                     ]
                 };
-                text = text + data_key + ' год';
+                text = text + data_key + '{{ _(' год') }}';
             } else {
                 let labels = [];
                 let datasets_data = [];
@@ -343,7 +392,7 @@
                     labels: labels,
                     datasets: [
                         {
-                            label: 'Температура воздуха по цельсию',
+                            label: '{{ _('Температура воздуха по цельсию') }}',
                             data: datasets_data,
                             borderColor: '#0e5cf8',
                             backgroundColor: '#0e5cf8',
@@ -386,7 +435,7 @@
                             display: true,
                             title: {
                                 display: true,
-                                text: 'Температура воздуха по цельсию'
+                                text: '{{ _('Температура воздуха по цельсию') }}'
                             },
                             suggestedMin: -30,
                             suggestedMax: 30

@@ -1,0 +1,658 @@
+# Kazakh (Kazakhstan) translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-04-14 17:11+0600\n"
+"PO-Revision-Date: 2022-04-14 18:03+0600\n"
+"Last-Translator: \n"
+"Language-Team: kk_KZ <LL@li.org>\n"
+"Language: kk_KZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: templates/analytics.html:6 templates/base.html:19 templates/base.html:45
+msgid "Аналитика"
+msgstr "Аналитика"
+
+#: templates/analytics.html:11
+msgid "Астана-РЭК"
+msgstr "Астана-АЭК"
+
+#: templates/analytics.html:12
+msgid "Жилые комплексы"
+msgstr "Тұрғын үй кешендері"
+
+#: templates/analytics.html:17
+msgid "Источник: данные АО \"Астана РЭК\""
+msgstr "Дереккөз: «Астана АЭК» АҚ мәліметтері"
+
+#: templates/analytics.html:145 templates/analytics.html:209
+#: templates/analytics.html:663
+msgid "2016 год"
+msgstr "2016 жыл"
+
+#: templates/analytics.html:145 templates/analytics.html:209
+#: templates/analytics.html:399 templates/analytics.html:447
+#: templates/analytics.html:663
+msgid "2017 год"
+msgstr "2017 жыл"
+
+#: templates/analytics.html:145 templates/analytics.html:209
+#: templates/analytics.html:399 templates/analytics.html:447
+#: templates/analytics.html:663
+msgid "2018 год"
+msgstr "2018 жыл"
+
+#: templates/analytics.html:145 templates/analytics.html:209
+#: templates/analytics.html:399 templates/analytics.html:447
+#: templates/analytics.html:663 templates/station-info.html:137
+#: templates/station-info.html:177 templates/station-info.html:217
+#: templates/station-info.html:258
+msgid "2019 год"
+msgstr "2019 жыл"
+
+#: templates/analytics.html:145 templates/analytics.html:209
+#: templates/analytics.html:399 templates/analytics.html:447
+#: templates/analytics.html:663 templates/station-info.html:137
+#: templates/station-info.html:177 templates/station-info.html:217
+#: templates/station-info.html:258
+msgid "2020 год"
+msgstr "2020 жыл"
+
+#: templates/analytics.html:148
+msgid "Передача электроэнергии, млн. кВт*ч"
+msgstr "Электр энергиясын беру, млн кВт/сағ"
+
+#: templates/analytics.html:156 templates/analytics.html:193
+msgid "Доля потерь электроэнергии"
+msgstr "Электр энергиясының ысыраптарының үлесі"
+
+#: templates/analytics.html:178
+msgid "Показатели основной деятельности"
+msgstr "Негізгі өнімділік көрсеткіштері"
+
+#: templates/analytics.html:186
+msgid "Передача эдектроэнергии, млн. кВт*ч"
+msgstr "Электр энергиясын беру, млн кВт/сағ"
+
+#: templates/analytics.html:212
+msgid "КЛ-220кВ"
+msgstr "КЛ-220кВ"
+
+#: templates/analytics.html:219
+msgid "КЛ-110кВ"
+msgstr "КЛ-110кВ"
+
+#: templates/analytics.html:226
+msgid "КЛ-20кВ"
+msgstr "КЛ-20кВ"
+
+#: templates/analytics.html:233
+msgid "КЛ-10кВ"
+msgstr "КЛ-10кВ"
+
+#: templates/analytics.html:240
+msgid "КЛ-6кВ"
+msgstr "КЛ-6кВ"
+
+#: templates/analytics.html:247
+msgid "КЛ-0,4кВ"
+msgstr "КЛ-0,4кВ"
+
+#: templates/analytics.html:254
+msgid "ВЛ-220кВ"
+msgstr "ВЛ-220кВ"
+
+#: templates/analytics.html:261
+msgid "ВЛ-110кВ"
+msgstr "ВЛ-110кВ"
+
+#: templates/analytics.html:268
+msgid "ВЛ-10кВ"
+msgstr "ВЛ-10кВ"
+
+#: templates/analytics.html:275
+msgid "ВЛ-0,4кВ"
+msgstr "ВЛ-0,4кВ"
+
+#: templates/analytics.html:295
+msgid "Динамика развития электросетевого оборудования"
+msgstr "Электр желілерінің жабдықтарының даму динамикасы"
+
+#: templates/analytics.html:303
+msgid "протяженность ВЛ и КЛ, км"
+msgstr "әуе желілері мен кабельдік желілердің ұзындығы, км"
+
+#: templates/analytics.html:355
+msgid "Астана РЭК"
+msgstr "Астана АЭК"
+
+#: templates/analytics.html:355
+msgid "Атырау-Жарык"
+msgstr "Атырау-Жарық"
+
+#: templates/analytics.html:355
+msgid "Онтустик Жарык Транзит РЭК"
+msgstr "«Оңтүстік Жарық транзит» РЭК"
+
+#: templates/analytics.html:355
+msgid "Кокшетау-Энерго"
+msgstr "Көкшетау-Энерго"
+
+#: templates/analytics.html:355
+msgid "Павлодарская РЭК"
+msgstr "Павлодар АЭК"
+
+#: templates/analytics.html:356
+msgid "Жезказганская РЭК"
+msgstr "Жезқазған АЭК"
+
+#: templates/analytics.html:356
+msgid "Алатау-Жарык (АЖК)"
+msgstr "Алатау-Жарық (АЖК)"
+
+#: templates/analytics.html:356
+msgid "Акмолинская РЭК"
+msgstr "Ақмола АЭК"
+
+#: templates/analytics.html:356
+msgid "Энергосистема"
+msgstr "Қуат жүйесі"
+
+#: templates/analytics.html:356
+msgid "Мангистауская РЭК"
+msgstr "Маңғыстау АЭК"
+
+#: templates/analytics.html:356
+msgid "ТАТЭК"
+msgstr "TATEK"
+
+#: templates/analytics.html:357
+msgid "Жамбылские электрические сети"
+msgstr "Жамбыл электр желілері"
+
+#: templates/analytics.html:357
+msgid "Кызылординская РЭК"
+msgstr "Қызылорда АЭК"
+
+#: templates/analytics.html:357
+msgid "Караганды Жарык"
+msgstr "Қарағанды Жарық"
+
+#: templates/analytics.html:357
+msgid "Северо-Казахстанская РЭК"
+msgstr "Солтүстік Қазақстан АЭК"
+
+#: templates/analytics.html:358
+msgid "Карагандинская РЭК"
+msgstr "Қарағанды АЭК"
+
+#: templates/analytics.html:358
+msgid "ВКО АО \"Объединенная ЭнергоСервисная Комп.\""
+msgstr "«Біріккен Энергетикалық Сервис Комп.» ШҚО АҚ."
+
+#: templates/analytics.html:358
+msgid "Запано-Казахстанская РЭК"
+msgstr "Запано-Қазақстан РЭК"
+
+#: templates/analytics.html:359
+msgid "Межрегионэнерготранзит"
+msgstr "Аймақаралық энергия транзиті"
+
+#: templates/analytics.html:362 templates/analytics.html:383
+msgid "Износ основных фондов"
+msgstr "Негізгі қорлардың амортизациясы"
+
+#: templates/analytics.html:402
+msgid "SAIDI продолжительнось перерывов в электроснабжении, часов в год"
+msgstr "SAIDI электр қуатын өшіру ұзақтығы, жылына сағат"
+
+#: templates/analytics.html:421 templates/analytics.html:469
+msgid "Индексы надежности электроснабжения"
+msgstr "Электрмен жабдықтау сенімділік көрсеткіштері"
+
+#: templates/analytics.html:450
+msgid "SAIFI частота перерывов в электроснабжении, раз в год"
+msgstr "SAIFI электр қуатын өшіру жиілігі, жылына бір рет"
+
+#: templates/analytics.html:502
+msgid "Дом 2/6. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
+msgstr "Үй 2/6. Жылу шығыны (Гкал) - Тұрғын емес, коммерциялық үй-жайлар"
+
+#: templates/analytics.html:513
+msgid "Дом 2/6. Потребление тепла (Гкал) - Квартиры"
+msgstr "Үй 2/6. Жылу тұтыну (Гкал) - Пәтерлер"
+
+#: templates/analytics.html:524
+msgid "Дом 2/5. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
+msgstr "Үй 2/5. Жылу шығыны (Гкал) - Тұрғын емес, коммерциялық үй-жайлар"
+
+#: templates/analytics.html:535
+msgid "Дом 2/5. Потребление тепла (Гкал) - Квартиры"
+msgstr "Үй 2/5. Жылу тұтыну (Гкал) - Пәтерлер"
+
+#: templates/analytics.html:546
+msgid "Дом 2/4. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
+msgstr "Үй 2/4. Жылу шығыны (Гкал) - Тұрғын емес, коммерциялық үй-жайлар"
+
+#: templates/analytics.html:557
+msgid "Дом 2/4. Потребление тепла (Гкал) - Квартиры"
+msgstr "Үй 2/4. Жылу тұтыну (Гкал) - Пәтерлер"
+
+#: templates/analytics.html:568
+msgid "Дом 2/3. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
+msgstr "Үй 2/3. Жылу шығыны (Гкал) - Тұрғын емес, коммерциялық үй-жайлар"
+
+#: templates/analytics.html:579
+msgid "Дом 2/3. Потребление тепла (Гкал) - Квартиры"
+msgstr "Үй 2/3. Жылу тұтыну (Гкал) - Пәтерлер"
+
+#: templates/analytics.html:601
+msgid "ЖК Северная корона"
+msgstr "СКД Солтүстік корона"
+
+#: templates/analytics.html:618
+msgid "Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
+msgstr "Жылу шығыны (Гкал) - Тұрғын емес, коммерциялық үй-жайлар"
+
+#: templates/analytics.html:630
+msgid "Потребление тепла (Гкал) - Квартиры"
+msgstr "Жылу тұтыну (Гкал) - Пәтерлер"
+
+#: templates/analytics.html:653
+msgid "ЖК Арайлым"
+msgstr "ЖК Арайлым"
+
+#: templates/analytics.html:666
+msgid "ПС-220кВ"
+msgstr "ПС-220кВ"
+
+#: templates/analytics.html:672
+msgid "ПС-110кВ"
+msgstr "ПС-110кВ"
+
+#: templates/analytics.html:678
+msgid "РП, ТП, КТП-10/0,4кВ"
+msgstr "ЖП, ТП, КТП-10/0,4кВ"
+
+#: templates/analytics.html:697
+msgid "Динамика развития электросетевого оборудования, штук"
+msgstr "Электр желілік жабдықтың даму динамикасы, дана"
+
+#: templates/base.html:17 templates/base.html:43
+msgid "О проекте"
+msgstr "Жоба жайлы"
+
+#: templates/base.html:18 templates/base.html:44
+msgid "Команда"
+msgstr "Команда"
+
+#: templates/base.html:20 templates/base.html:46
+msgid "Достижение"
+msgstr "Жетістік"
+
+#: templates/base.html:21 templates/base.html:47
+msgid "Контакты"
+msgstr "Контактілер"
+
+#: templates/main-page.html:16
+msgid "умный - значит энергоэффективный"
+msgstr "смарт - энергияны үнемдейтінді білдіреді"
+
+#: templates/main-page.html:21
+msgid "ЭНЕРГОСБЕРЕЖЕНИЕ."
+msgstr "ЭНЕРГИЯНЫ ҮНЕМДЕУ."
+
+#: templates/main-page.html:22
+msgid "ЧТО СДЕЛАНО ЗА 10 ЛЕТ?"
+msgstr "10 ЖЫЛДА НЕ ЖАСАЛДЫ?"
+
+#: templates/main-page.html:27
+msgid "МЕЖДУНАРОДНОЕ"
+msgstr "ХАЛЫҚАРАЛЫҚ"
+
+#: templates/main-page.html:28
+msgid "ЭНЕРГЕТИЧЕСКОЕ АГЕНТСТВО"
+msgstr "ЭНЕРГЕТИКА АГЕНТТІГІ"
+
+#: templates/main-page.html:36
+msgid "Тепловые энергостанции в городе Нур-Султан"
+msgstr "Нұр-Сұлтан қаласындағы жылу электр станциялары"
+
+#: templates/main-page.html:48
+msgid "Адрес ТЭЦ: "
+msgstr "ЖЭО мекенжайы: "
+
+#: templates/main-page.html:49
+msgid "Больше информации"
+msgstr "Көбірек ақпарат"
+
+#: templates/main-page.html:79 templates/main-page.html:109
+msgid "Выберите дату"
+msgstr "Күнді таңдаңыз"
+
+#: templates/main-page.html:80 templates/main-page.html:110
+msgid "Показать"
+msgstr "Көрсету"
+
+#: templates/main-page.html:188
+msgid "Скорость ветра, "
+msgstr "Жел жылдамдығы, "
+
+#: templates/main-page.html:192 templates/main-page.html:316
+msgid "Январь"
+msgstr "Қаңтар"
+
+#: templates/main-page.html:192 templates/main-page.html:316
+msgid "Февраль"
+msgstr "Ақпан"
+
+#: templates/main-page.html:192 templates/main-page.html:316
+msgid "Март"
+msgstr "Наурыз"
+
+#: templates/main-page.html:192 templates/main-page.html:316
+msgid "Апрель"
+msgstr "Сәуір"
+
+#: templates/main-page.html:192 templates/main-page.html:316
+msgid "Май"
+msgstr "Мамыр"
+
+#: templates/main-page.html:193 templates/main-page.html:317
+msgid "Июнь"
+msgstr "Маусым"
+
+#: templates/main-page.html:193 templates/main-page.html:317
+msgid "Июль"
+msgstr "Шілде"
+
+#: templates/main-page.html:193 templates/main-page.html:317
+msgid "Август"
+msgstr "Тамыз"
+
+#: templates/main-page.html:193 templates/main-page.html:317
+msgid "Сентябрь"
+msgstr "Қыркүйек"
+
+#: templates/main-page.html:193 templates/main-page.html:317
+msgid "Октябрь"
+msgstr "Қазан"
+
+#: templates/main-page.html:193 templates/main-page.html:317
+msgid "Ноябрь"
+msgstr "Қараша"
+
+#: templates/main-page.html:193 templates/main-page.html:317
+msgid "Декабрь"
+msgstr "Желтоқсан"
+
+#: templates/main-page.html:196
+msgid "Скорость ветра м/с (Среднее значение)"
+msgstr "Жел жылдамдығы м/с (орташа)"
+
+#: templates/main-page.html:206 templates/main-page.html:330
+msgid " год"
+msgstr " жыл"
+
+#: templates/main-page.html:220
+msgid "Скорость ветра м/с"
+msgstr "Жел жылдамдығы м/с"
+
+#: templates/main-page.html:263
+msgid "Скорость м/с"
+msgstr "Жылдамдық м/с"
+
+#: templates/main-page.html:312
+msgid "Температура воздуха, "
+msgstr "Ауа температурасы, "
+
+#: templates/main-page.html:320
+msgid "Температура воздуха по цельсию (Среднее значение)"
+msgstr "Цельсий бойынша ауа температурасы (Орташа мән)"
+
+#: templates/main-page.html:344 templates/main-page.html:387
+msgid "Температура воздуха по цельсию"
+msgstr "Цельсий бойынша ауа температурасы"
+
+#: templates/station-info.html:42
+msgid "Тип котлоагрегата (год установки)"
+msgstr "Қазандықтың түрі (орнатылған жылы)"
+
+#: templates/station-info.html:43
+msgid "Мощность"
+msgstr "Қуат"
+
+#: templates/station-info.html:46
+msgid "Паспорт"
+msgstr "Паспорт"
+
+#: templates/station-info.html:47
+msgid "Факт"
+msgstr "Факт"
+
+#: templates/station-info.html:65
+msgid "Наименование присоединения и объектов"
+msgstr "Қосылу және объектілердің атауы"
+
+#: templates/station-info.html:66
+msgid "СИ: Учет энергоресурсов"
+msgstr "СИ: Энергия есебі"
+
+#: templates/station-info.html:70 templates/station-info.html:118
+msgid "Место установки"
+msgstr "Орнату орны"
+
+#: templates/station-info.html:71
+msgid "Заводской №ПУ"
+msgstr "Сериялық нөмірі ПУ"
+
+#: templates/station-info.html:72
+msgid "Тип"
+msgstr "Типі"
+
+#: templates/station-info.html:73
+msgid "Расч. коэф."
+msgstr "Есептеу. коэффициент"
+
+#: templates/station-info.html:74
+msgid "Класс точности"
+msgstr "Дәлдік класы"
+
+#: templates/station-info.html:98
+msgid "СИ: Учет потребления воды"
+msgstr "СИ: Суды өлшеу"
+
+#: templates/station-info.html:113
+msgid "СИ: Учет тепла"
+msgstr "СИ: Жылуды өлшеу"
+
+#: templates/station-info.html:116
+msgid "Тип прибора"
+msgstr "Құрылғы түрі"
+
+#: templates/station-info.html:117
+msgid "Заводской номер"
+msgstr "Зауыт нөмірі"
+
+#: templates/station-info.html:137 templates/station-info.html:177
+#: templates/station-info.html:217 templates/station-info.html:258
+msgid "2021 год"
+msgstr "2021 жыл"
+
+#: templates/station-info.html:162
+msgid "Потребление топлива, Газ тыс.м3"
+msgstr "Отын шығыны, Газ мың м3"
+
+#: templates/station-info.html:202
+msgid "Потребление топлива, Мазут тнт"
+msgstr "Жанармай шығыны, Мазут тн"
+
+#: templates/station-info.html:242
+msgid "Потребление топлива, Уголь тнт"
+msgstr "Отын шығыны, көмір тн"
+
+#: templates/station-info.html:283
+msgid "Производство тепла"
+msgstr "Жылу өндірісі"
+
+#: templates/team.html:12
+msgid "Аягоз Хамзина"
+msgstr "Аягөз Хамзина"
+
+#: templates/team.html:13
+msgid ""
+"Хамзина Аягоз Сактаганкызы родилась в 1994 году, 25 ноября (25.11.1994) "
+"в г.Уральск, Казахстан. В\n"
+"                2012 году закончила среднюю общеобразовательную школу №2 "
+"и поступила в Казахский Национальный\n"
+"                Университет на специальность «химик-технолог». В 2016 "
+"году получила степень магистра технических наук.\n"
+"                Трудовую деятельность начала, еще будучи студентом, на "
+"позиции младшего научного сотрудника в НИИ\n"
+"                проблем горения. В ходе научной деятельности была "
+"усовершенствована технология получения экологических\n"
+"                водорастворимых полиуретановых красок. В 2017 году "
+"прошла стажировку в Лодзинском Политехническом\n"
+"                Университете г. Лодзь, Польша. В 2018 году участвовала в "
+"конференции, посвященной устойчивому развитию,\n"
+"                организованной ООН в штаб-квартире в Нью-Йорке. "
+"Практиковалась в ведущих компаниях, занимающихся\n"
+"                нефтепереработкой, таких как Karachaganak Petroleum "
+"Operated, Атырауский нефтеперерабатывающий завод. На\n"
+"                данный момент занимает позицию младшего научного "
+"сотрудника при департаменте науки и инноваций в AITU."
+msgstr ""
+"Хамзина Аягөз Сақтағанқызы 1994 жылы 25 қарашада (25.11.1994) Орал "
+"қаласында дүниеге келген. AT\n"
+"                2012 жылы №2 орта мектепті бітіріп, Қазақ ұлттық "
+"мамандығына оқуға түсті\n"
+"                «Химик-технолог» мамандығы бойынша университет. 2016 "
+"жылы техникалық ғылымдар магистрі дәрежесін алды.\n"
+"                Еңбек жолын студент кезінде ғылыми-зерттеу институтында "
+"кіші ғылыми қызметкер болып бастады\n"
+"                жану проблемалары. Ғылыми қызмет барысында экологиялық "
+"алу технологиясы\n"
+"                суда еритін полиуретанды бояулар. 2017 жылы Лодзь "
+"технологиялық университетінде тағылымдамадан өтті\n"
+"                Лодзь университеті, Польша. 2018 жылы ол тұрақты даму "
+"бойынша конференцияға қатысты,\n"
+"                Біріккен Ұлттар Ұйымы Нью-Йорктегі штаб-пәтерінде "
+"ұйымдастырды. айналысатын жетекші компанияларда тәжірибеден өткен\n"
+"                Қарашығанақ Петролеум Оперейтед, Атырау мұнай өңдеу "
+"зауыты сияқты мұнай өңдеу. Үстінде\n"
+"                қазіргі уақытта АТУ ғылым және инновациялар кафедрасының "
+"кіші ғылыми қызметкері."
+
+#: templates/team.html:29
+msgid ""
+"Nurkhat Zhakiyev is a computer modeler of energy systems, GHG "
+"emissions projections in industry\n"
+"                sector and Climate change mitigation analyst. He is "
+"currently working at Astana IT University. He holds\n"
+"                PhD in physics from Eurasian National University "
+"(Kazakhstan, 2015). After obtaining PhD degree in 2015\n"
+"                started working as a Researcher at PI “Nazarbayev "
+"University Research and Innovation System”, PI\n"
+"                “National Laboratory Astana”, Energy Ecology and Climate "
+"Laboratory at Nazarbayev University. Nurkhat\n"
+"                was involved to projects on modeling of energy sector of "
+"Kazakhstan using ELMOD, TIMES energy systems\n"
+"                modeling tools. In 2015-2021 he participated in the "
+"project «Development of Kazakhstan’s National\n"
+"                Communication to the UNFCCC and BR» where he was "
+"responsible for provision of information about\n"
+"                Kazakhstan’s activities to mitigate climate change, "
+"including policies and measures that it has\n"
+"                implemented or plans to implement and update of "
+"forecasts for 2030 and 2050 (industrial sector). In\n"
+"                2019-2020 years he participated in soft linking project "
+"of CGE (top-down) model of Kazakhstan with\n"
+"                TIMES-Kazakhstan (bottom-up) energy system model (PMR/"
+"World Bank Project for Kazakhstan). During this\n"
+"                project he took part in development of initial data "
+"sets, optimization model of energy system of\n"
+"                Kazakhstan, in analysis of the various policies and "
+"measures to reduce the impact on climate, in\n"
+"                analysis of the role of the emissions trading system and "
+"the development of different options for\n"
+"                different scenarios. Main research interests are technic-"
+"economical modelling of energy systems, Climate\n"
+"                Change Mitigation Analysis and GHG emissions "
+"projections. The outputs from their works has already\n"
+"                resulted in academic publications in form a joint "
+"research article in a leading journal on industry and\n"
+"                energy research (~15 publications in international "
+"journals, H-index 4)."
+msgstr ""
+"Нұрхат Жакиев энергетикалық жүйелердің, өнеркәсіптегі парниктік газдар "
+"шығарындыларын болжаудың компьютерлік модельері\n"
+"                сектор және климаттың өзгеруін азайту жөніндегі "
+"талдаушы. Қазір Астана IT университетінде жұмыс істейді. Ол ұстайды\n"
+"                Еуразия ұлттық университетінің физика ғылымдарының "
+"кандидаты (Қазақстан, 2015 ж.). 2015 жылы PhD дәрежесін алғаннан кейін\n"
+"                «Назарбаев Университетінің ғылыми-инновациялық жүйесі» "
+"ММ ғылыми қызметкері болып жұмыс істей бастады\n"
+"                «Астана ұлттық зертханасы», Назарбаев университетіндегі "
+"энергетикалық экология және климат зертханасы. Нұрхат\n"
+"                ELMOD, TIMES энергетикалық жүйелерін пайдалана отырып, "
+"Қазақстанның энергетикалық секторын модельдеу жобаларына қатысты\n"
+"                модельдеу құралдары. 2015-2021 жылдары «Қазақстанның "
+"ұлттық\n"
+"                UNFCCC және BR-мен байланыс» туралы ақпарат беруге "
+"жауапты болды\n"
+"                Қазақстанның климаттың өзгеруін азайту жөніндегі "
+"қызметі, оның ішінде оның саясаты мен шаралары\n"
+"                орындалды немесе 2030 және 2050 жылдарға арналған "
+"болжамдарды орындау және жаңарту жоспарлары (өнеркәсіптік сектор). жылы\n"
+"                2019-2020 жылдары Қазақстанның CGE (жоғарыдан төмен) "
+"моделінің жұмсақ байланыстыру жобасына қатысты.\n"
+"                TIMES-Қазақстан (төменнен жоғары) энергия жүйесінің "
+"моделі (Қазақстан үшін PMR/Дүниежүзілік банк жобасы). Осы уақыт ішінде\n"
+"                жобасының бастапқы деректер жинақтарын, энергетикалық "
+"жүйені оңтайландыру моделін әзірлеуге қатысты\n"
+"                Қазақстан климатқа әсер етуді азайту бойынша әртүрлі "
+"саясаттар мен шараларды талдауда, в\n"
+"                шығарындыларды саудалау жүйесінің рөлін талдау және "
+"әртүрлі нұсқаларды әзірлеу\n"
+"                әртүрлі сценарийлер. Негізгі ғылыми қызығушылықтары "
+"энергетикалық жүйелерді техникалық-экономикалық модельдеу, Климат\n"
+"                Азайту талдауын және парниктік газдар шығарындыларының "
+"болжамдарын өзгерту. Олардың жұмыстарының нәтижесі қазірдің өзінде бар\n"
+"                өнеркәсіп пен жетекші журналда бірлескен зерттеу "
+"мақаласы түріндегі академиялық жарияланымдарға қол жеткізді\n"
+"                энергетикалық зерттеулер (халықаралық журналдардағы ~15 "
+"жарияланым, H-индекс 4)."
+
+#: templates/team.html:54
+msgid ""
+"Кенжина Мадина, 25 лет, выпускница программы бакалавриата "
+"«Electrical and electronic engineering»\n"
+"                Назарбаев Университета 2019 года, "
+"специализация Power Engineering. Имеется несколько публикаций,\n"
+"                посвященные изучению надежной работы энергосистемы, "
+"целесообразности внедрения виртуальной\n"
+"                электростанции в Казахстане. На текущий момент ведущий "
+"инженер АО «KEGOC». Сфера деятельности:\n"
+"                эксплуатация активно-адаптивных систем Единой "
+"Энергосистемы Казахстана (АРЧМ, WAMS и др.)."
+msgstr ""
+"Кенжина Мадина, 25 жаста, «Электроэлектрондық инженерия» бакалавриат "
+"бағдарламасының түлегі\n"
+"                Назарбаев Университеті 2019, PowerEngineering мамандығы. "
+"Бірнеше басылымдар бар\n"
+"                энергетикалық жүйенің сенімді жұмысын, виртуалды "
+"енгізудің орындылығын зерттеуге арналған\n"
+"                Қазақстандағы электр станциялары. Қазіргі уақытта "
+"«KEGOC» АҚ жетекші инженері. Қызмет саласы:\n"
+"                Қазақстанның Бірыңғай энергетикалық жүйесінің (АРХМ, "
+"WAMS және т.б.) белсенді-бейімделу жүйелерін пайдалану."

@@ -40,15 +40,15 @@
 
 .img1 {
     background: no-repeat url("/static/img/img1.png");
-    font-size: 4vw;
+    font-size: 3vw;
 }
 .img2 {
     background: no-repeat url("/static/img/img2.png");
-    font-size: 5vw;
+    font-size: 4vw;
 }
 .img3 {
     background: no-repeat url("/static/img/img3.png");
-    font-size: 5vw;
+    font-size: 4vw;
 }
 .img1, .img2, .img3 {
     width: 100%;
