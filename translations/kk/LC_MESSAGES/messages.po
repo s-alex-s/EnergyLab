@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-04-14 17:11+0600\n"
-"PO-Revision-Date: 2022-04-14 18:03+0600\n"
+"POT-Creation-Date: 2022-04-15 20:35+0600\n"
+"PO-Revision-Date: 2022-04-15 20:38+0600\n"
 "Last-Translator: \n"
 "Language-Team: kk_KZ <LL@li.org>\n"
 "Language: kk_KZ\n"
@@ -31,260 +31,291 @@ msgstr "Астана-АЭК"
 msgid "Жилые комплексы"
 msgstr "Тұрғын үй кешендері"
 
-#: templates/analytics.html:17
+#: templates/analytics.html:13
+msgid "ТЭЦ"
+msgstr "ЖЭО"
+
+#: templates/analytics.html:18
 msgid "Источник: данные АО \"Астана РЭК\""
 msgstr "Дереккөз: «Астана АЭК» АҚ мәліметтері"
 
-#: templates/analytics.html:145 templates/analytics.html:209
-#: templates/analytics.html:663
-msgid "2016 год"
-msgstr "2016 жыл"
-
-#: templates/analytics.html:145 templates/analytics.html:209
-#: templates/analytics.html:399 templates/analytics.html:447
-#: templates/analytics.html:663
-msgid "2017 год"
-msgstr "2017 жыл"
-
-#: templates/analytics.html:145 templates/analytics.html:209
-#: templates/analytics.html:399 templates/analytics.html:447
-#: templates/analytics.html:663
-msgid "2018 год"
-msgstr "2018 жыл"
-
-#: templates/analytics.html:145 templates/analytics.html:209
-#: templates/analytics.html:399 templates/analytics.html:447
-#: templates/analytics.html:663 templates/station-info.html:137
+#: templates/analytics.html:208 templates/analytics.html:246
+#: templates/analytics.html:284 templates/analytics.html:323
+#: templates/analytics.html:363 templates/analytics.html:427
+#: templates/analytics.html:617 templates/analytics.html:665
+#: templates/analytics.html:881 templates/station-info.html:137
 #: templates/station-info.html:177 templates/station-info.html:217
 #: templates/station-info.html:258
 msgid "2019 год"
 msgstr "2019 жыл"
 
-#: templates/analytics.html:145 templates/analytics.html:209
-#: templates/analytics.html:399 templates/analytics.html:447
-#: templates/analytics.html:663 templates/station-info.html:137
+#: templates/analytics.html:208 templates/analytics.html:246
+#: templates/analytics.html:284 templates/analytics.html:323
+#: templates/analytics.html:363 templates/analytics.html:427
+#: templates/analytics.html:617 templates/analytics.html:665
+#: templates/analytics.html:881 templates/station-info.html:137
 #: templates/station-info.html:177 templates/station-info.html:217
 #: templates/station-info.html:258
 msgid "2020 год"
 msgstr "2020 жыл"
 
-#: templates/analytics.html:148
+#: templates/analytics.html:208 templates/analytics.html:246
+#: templates/analytics.html:284 templates/analytics.html:323
+#: templates/station-info.html:137 templates/station-info.html:177
+#: templates/station-info.html:217 templates/station-info.html:258
+msgid "2021 год"
+msgstr "2021 жыл"
+
+#: templates/analytics.html:233 templates/station-info.html:162
+msgid "Потребление топлива, Газ тыс.м3"
+msgstr "Отын шығыны, Газ мың м3"
+
+#: templates/analytics.html:271 templates/station-info.html:202
+msgid "Потребление топлива, Мазут тнт"
+msgstr "Жанармай шығыны, Мазут тн"
+
+#: templates/analytics.html:309 templates/station-info.html:242
+msgid "Потребление топлива, Уголь тнт"
+msgstr "Отын шығыны, көмір тн"
+
+#: templates/analytics.html:348 templates/station-info.html:283
+msgid "Производство тепла"
+msgstr "Жылу өндірісі"
+
+#: templates/analytics.html:363 templates/analytics.html:427
+#: templates/analytics.html:881
+msgid "2016 год"
+msgstr "2016 жыл"
+
+#: templates/analytics.html:363 templates/analytics.html:427
+#: templates/analytics.html:617 templates/analytics.html:665
+#: templates/analytics.html:881
+msgid "2017 год"
+msgstr "2017 жыл"
+
+#: templates/analytics.html:363 templates/analytics.html:427
+#: templates/analytics.html:617 templates/analytics.html:665
+#: templates/analytics.html:881
+msgid "2018 год"
+msgstr "2018 жыл"
+
+#: templates/analytics.html:366
 msgid "Передача электроэнергии, млн. кВт*ч"
 msgstr "Электр энергиясын беру, млн кВт/сағ"
 
-#: templates/analytics.html:156 templates/analytics.html:193
+#: templates/analytics.html:374 templates/analytics.html:411
 msgid "Доля потерь электроэнергии"
 msgstr "Электр энергиясының ысыраптарының үлесі"
 
-#: templates/analytics.html:178
+#: templates/analytics.html:396
 msgid "Показатели основной деятельности"
 msgstr "Негізгі өнімділік көрсеткіштері"
 
-#: templates/analytics.html:186
+#: templates/analytics.html:404
 msgid "Передача эдектроэнергии, млн. кВт*ч"
 msgstr "Электр энергиясын беру, млн кВт/сағ"
 
-#: templates/analytics.html:212
+#: templates/analytics.html:430
 msgid "КЛ-220кВ"
 msgstr "КЛ-220кВ"
 
-#: templates/analytics.html:219
+#: templates/analytics.html:437
 msgid "КЛ-110кВ"
 msgstr "КЛ-110кВ"
 
-#: templates/analytics.html:226
+#: templates/analytics.html:444
 msgid "КЛ-20кВ"
 msgstr "КЛ-20кВ"
 
-#: templates/analytics.html:233
+#: templates/analytics.html:451
 msgid "КЛ-10кВ"
 msgstr "КЛ-10кВ"
 
-#: templates/analytics.html:240
+#: templates/analytics.html:458
 msgid "КЛ-6кВ"
 msgstr "КЛ-6кВ"
 
-#: templates/analytics.html:247
+#: templates/analytics.html:465
 msgid "КЛ-0,4кВ"
 msgstr "КЛ-0,4кВ"
 
-#: templates/analytics.html:254
+#: templates/analytics.html:472
 msgid "ВЛ-220кВ"
 msgstr "ВЛ-220кВ"
 
-#: templates/analytics.html:261
+#: templates/analytics.html:479
 msgid "ВЛ-110кВ"
 msgstr "ВЛ-110кВ"
 
-#: templates/analytics.html:268
+#: templates/analytics.html:486
 msgid "ВЛ-10кВ"
 msgstr "ВЛ-10кВ"
 
-#: templates/analytics.html:275
+#: templates/analytics.html:493
 msgid "ВЛ-0,4кВ"
 msgstr "ВЛ-0,4кВ"
 
-#: templates/analytics.html:295
+#: templates/analytics.html:513
 msgid "Динамика развития электросетевого оборудования"
 msgstr "Электр желілерінің жабдықтарының даму динамикасы"
 
-#: templates/analytics.html:303
+#: templates/analytics.html:521
 msgid "протяженность ВЛ и КЛ, км"
 msgstr "әуе желілері мен кабельдік желілердің ұзындығы, км"
 
-#: templates/analytics.html:355
+#: templates/analytics.html:573
 msgid "Астана РЭК"
 msgstr "Астана АЭК"
 
-#: templates/analytics.html:355
+#: templates/analytics.html:573
 msgid "Атырау-Жарык"
 msgstr "Атырау-Жарық"
 
-#: templates/analytics.html:355
+#: templates/analytics.html:573
 msgid "Онтустик Жарык Транзит РЭК"
 msgstr "«Оңтүстік Жарық транзит» РЭК"
 
-#: templates/analytics.html:355
+#: templates/analytics.html:573
 msgid "Кокшетау-Энерго"
 msgstr "Көкшетау-Энерго"
 
-#: templates/analytics.html:355
+#: templates/analytics.html:573
 msgid "Павлодарская РЭК"
 msgstr "Павлодар АЭК"
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "Жезказганская РЭК"
 msgstr "Жезқазған АЭК"
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "Алатау-Жарык (АЖК)"
 msgstr "Алатау-Жарық (АЖК)"
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "Акмолинская РЭК"
 msgstr "Ақмола АЭК"
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "Энергосистема"
 msgstr "Қуат жүйесі"
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "Мангистауская РЭК"
 msgstr "Маңғыстау АЭК"
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "ТАТЭК"
 msgstr "TATEK"
 
-#: templates/analytics.html:357
+#: templates/analytics.html:575
 msgid "Жамбылские электрические сети"
 msgstr "Жамбыл электр желілері"
 
-#: templates/analytics.html:357
+#: templates/analytics.html:575
 msgid "Кызылординская РЭК"
 msgstr "Қызылорда АЭК"
 
-#: templates/analytics.html:357
+#: templates/analytics.html:575
 msgid "Караганды Жарык"
 msgstr "Қарағанды Жарық"
 
-#: templates/analytics.html:357
+#: templates/analytics.html:575
 msgid "Северо-Казахстанская РЭК"
 msgstr "Солтүстік Қазақстан АЭК"
 
-#: templates/analytics.html:358
+#: templates/analytics.html:576
 msgid "Карагандинская РЭК"
 msgstr "Қарағанды АЭК"
 
-#: templates/analytics.html:358
+#: templates/analytics.html:576
 msgid "ВКО АО \"Объединенная ЭнергоСервисная Комп.\""
 msgstr "«Біріккен Энергетикалық Сервис Комп.» ШҚО АҚ."
 
-#: templates/analytics.html:358
+#: templates/analytics.html:576
 msgid "Запано-Казахстанская РЭК"
 msgstr "Запано-Қазақстан РЭК"
 
-#: templates/analytics.html:359
+#: templates/analytics.html:577
 msgid "Межрегионэнерготранзит"
 msgstr "Аймақаралық энергия транзиті"
 
-#: templates/analytics.html:362 templates/analytics.html:383
+#: templates/analytics.html:580 templates/analytics.html:601
 msgid "Износ основных фондов"
 msgstr "Негізгі қорлардың амортизациясы"
 
-#: templates/analytics.html:402
+#: templates/analytics.html:620
 msgid "SAIDI продолжительнось перерывов в электроснабжении, часов в год"
 msgstr "SAIDI электр қуатын өшіру ұзақтығы, жылына сағат"
 
-#: templates/analytics.html:421 templates/analytics.html:469
+#: templates/analytics.html:639 templates/analytics.html:687
 msgid "Индексы надежности электроснабжения"
 msgstr "Электрмен жабдықтау сенімділік көрсеткіштері"
 
-#: templates/analytics.html:450
+#: templates/analytics.html:668
 msgid "SAIFI частота перерывов в электроснабжении, раз в год"
 msgstr "SAIFI электр қуатын өшіру жиілігі, жылына бір рет"
 
-#: templates/analytics.html:502
+#: templates/analytics.html:720
 msgid "Дом 2/6. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
 msgstr "Үй 2/6. Жылу шығыны (Гкал) - Тұрғын емес, коммерциялық үй-жайлар"
 
-#: templates/analytics.html:513
+#: templates/analytics.html:731
 msgid "Дом 2/6. Потребление тепла (Гкал) - Квартиры"
 msgstr "Үй 2/6. Жылу тұтыну (Гкал) - Пәтерлер"
 
-#: templates/analytics.html:524
+#: templates/analytics.html:742
 msgid "Дом 2/5. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
 msgstr "Үй 2/5. Жылу шығыны (Гкал) - Тұрғын емес, коммерциялық үй-жайлар"
 
-#: templates/analytics.html:535
+#: templates/analytics.html:753
 msgid "Дом 2/5. Потребление тепла (Гкал) - Квартиры"
 msgstr "Үй 2/5. Жылу тұтыну (Гкал) - Пәтерлер"
 
-#: templates/analytics.html:546
+#: templates/analytics.html:764
 msgid "Дом 2/4. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
 msgstr "Үй 2/4. Жылу шығыны (Гкал) - Тұрғын емес, коммерциялық үй-жайлар"
 
-#: templates/analytics.html:557
+#: templates/analytics.html:775
 msgid "Дом 2/4. Потребление тепла (Гкал) - Квартиры"
 msgstr "Үй 2/4. Жылу тұтыну (Гкал) - Пәтерлер"
 
-#: templates/analytics.html:568
+#: templates/analytics.html:786
 msgid "Дом 2/3. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
 msgstr "Үй 2/3. Жылу шығыны (Гкал) - Тұрғын емес, коммерциялық үй-жайлар"
 
-#: templates/analytics.html:579
+#: templates/analytics.html:797
 msgid "Дом 2/3. Потребление тепла (Гкал) - Квартиры"
 msgstr "Үй 2/3. Жылу тұтыну (Гкал) - Пәтерлер"
 
-#: templates/analytics.html:601
+#: templates/analytics.html:819
 msgid "ЖК Северная корона"
 msgstr "СКД Солтүстік корона"
 
-#: templates/analytics.html:618
+#: templates/analytics.html:836
 msgid "Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
 msgstr "Жылу шығыны (Гкал) - Тұрғын емес, коммерциялық үй-жайлар"
 
-#: templates/analytics.html:630
+#: templates/analytics.html:848
 msgid "Потребление тепла (Гкал) - Квартиры"
 msgstr "Жылу тұтыну (Гкал) - Пәтерлер"
 
-#: templates/analytics.html:653
+#: templates/analytics.html:871
 msgid "ЖК Арайлым"
 msgstr "ЖК Арайлым"
 
-#: templates/analytics.html:666
+#: templates/analytics.html:884
 msgid "ПС-220кВ"
 msgstr "ПС-220кВ"
 
-#: templates/analytics.html:672
+#: templates/analytics.html:890
 msgid "ПС-110кВ"
 msgstr "ПС-110кВ"
 
-#: templates/analytics.html:678
+#: templates/analytics.html:896
 msgid "РП, ТП, КТП-10/0,4кВ"
 msgstr "ЖП, ТП, КТП-10/0,4кВ"
 
-#: templates/analytics.html:697
+#: templates/analytics.html:915
 msgid "Динамика развития электросетевого оборудования, штук"
 msgstr "Электр желілік жабдықтың даму динамикасы, дана"
 
@@ -292,7 +323,7 @@ msgstr "Электр желілік жабдықтың даму динамика
 msgid "О проекте"
 msgstr "Жоба жайлы"
 
-#: templates/base.html:18 templates/base.html:44
+#: templates/base.html:18 templates/base.html:44 templates/team.html:7
 msgid "Команда"
 msgstr "Команда"
 
@@ -336,91 +367,91 @@ msgstr "ЖЭО мекенжайы: "
 msgid "Больше информации"
 msgstr "Көбірек ақпарат"
 
-#: templates/main-page.html:79 templates/main-page.html:109
+#: templates/main-page.html:83 templates/main-page.html:113
 msgid "Выберите дату"
 msgstr "Күнді таңдаңыз"
 
-#: templates/main-page.html:80 templates/main-page.html:110
+#: templates/main-page.html:84 templates/main-page.html:114
 msgid "Показать"
 msgstr "Көрсету"
 
-#: templates/main-page.html:188
+#: templates/main-page.html:239
 msgid "Скорость ветра, "
 msgstr "Жел жылдамдығы, "
 
-#: templates/main-page.html:192 templates/main-page.html:316
+#: templates/main-page.html:243 templates/main-page.html:367
 msgid "Январь"
 msgstr "Қаңтар"
 
-#: templates/main-page.html:192 templates/main-page.html:316
+#: templates/main-page.html:243 templates/main-page.html:367
 msgid "Февраль"
 msgstr "Ақпан"
 
-#: templates/main-page.html:192 templates/main-page.html:316
+#: templates/main-page.html:243 templates/main-page.html:367
 msgid "Март"
 msgstr "Наурыз"
 
-#: templates/main-page.html:192 templates/main-page.html:316
+#: templates/main-page.html:243 templates/main-page.html:367
 msgid "Апрель"
 msgstr "Сәуір"
 
-#: templates/main-page.html:192 templates/main-page.html:316
+#: templates/main-page.html:243 templates/main-page.html:367
 msgid "Май"
 msgstr "Мамыр"
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Июнь"
 msgstr "Маусым"
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Июль"
 msgstr "Шілде"
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Август"
 msgstr "Тамыз"
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Сентябрь"
 msgstr "Қыркүйек"
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Октябрь"
 msgstr "Қазан"
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Ноябрь"
 msgstr "Қараша"
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Декабрь"
 msgstr "Желтоқсан"
 
-#: templates/main-page.html:196
+#: templates/main-page.html:247
 msgid "Скорость ветра м/с (Среднее значение)"
 msgstr "Жел жылдамдығы м/с (орташа)"
 
-#: templates/main-page.html:206 templates/main-page.html:330
+#: templates/main-page.html:257 templates/main-page.html:381
 msgid " год"
 msgstr " жыл"
 
-#: templates/main-page.html:220
+#: templates/main-page.html:271
 msgid "Скорость ветра м/с"
 msgstr "Жел жылдамдығы м/с"
 
-#: templates/main-page.html:263
+#: templates/main-page.html:314
 msgid "Скорость м/с"
 msgstr "Жылдамдық м/с"
 
-#: templates/main-page.html:312
+#: templates/main-page.html:363
 msgid "Температура воздуха, "
 msgstr "Ауа температурасы, "
 
-#: templates/main-page.html:320
+#: templates/main-page.html:371
 msgid "Температура воздуха по цельсию (Среднее значение)"
 msgstr "Цельсий бойынша ауа температурасы (Орташа мән)"
 
-#: templates/main-page.html:344 templates/main-page.html:387
+#: templates/main-page.html:395 templates/main-page.html:438
 msgid "Температура воздуха по цельсию"
 msgstr "Цельсий бойынша ауа температурасы"
 
@@ -483,27 +514,6 @@ msgstr "Құрылғы түрі"
 #: templates/station-info.html:117
 msgid "Заводской номер"
 msgstr "Зауыт нөмірі"
-
-#: templates/station-info.html:137 templates/station-info.html:177
-#: templates/station-info.html:217 templates/station-info.html:258
-msgid "2021 год"
-msgstr "2021 жыл"
-
-#: templates/station-info.html:162
-msgid "Потребление топлива, Газ тыс.м3"
-msgstr "Отын шығыны, Газ мың м3"
-
-#: templates/station-info.html:202
-msgid "Потребление топлива, Мазут тнт"
-msgstr "Жанармай шығыны, Мазут тн"
-
-#: templates/station-info.html:242
-msgid "Потребление топлива, Уголь тнт"
-msgstr "Отын шығыны, көмір тн"
-
-#: templates/station-info.html:283
-msgid "Производство тепла"
-msgstr "Жылу өндірісі"
 
 #: templates/team.html:12
 msgid "Аягоз Хамзина"

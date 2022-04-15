@@ -7,18 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-04-14 17:11+0600\n"
+"POT-Creation-Date: 2022-04-15 20:35+0600\n"
 "PO-Revision-Date: 2022-04-14 18:08+0600\n"
 "Last-Translator: \n"
-"Language-Team: ru <LL@li.org>\n"
 "Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Generated-By: Babel 2.9.1\n"
-"X-Generator: Poedit 3.0.1\n"
 
 #: templates/analytics.html:6 templates/base.html:19 templates/base.html:45
 msgid "Аналитика"
@@ -32,260 +31,291 @@ msgstr ""
 msgid "Жилые комплексы"
 msgstr ""
 
-#: templates/analytics.html:17
+#: templates/analytics.html:13
+msgid "ТЭЦ"
+msgstr ""
+
+#: templates/analytics.html:18
 msgid "Источник: данные АО \"Астана РЭК\""
 msgstr ""
 
-#: templates/analytics.html:145 templates/analytics.html:209
-#: templates/analytics.html:663
-msgid "2016 год"
-msgstr ""
-
-#: templates/analytics.html:145 templates/analytics.html:209
-#: templates/analytics.html:399 templates/analytics.html:447
-#: templates/analytics.html:663
-msgid "2017 год"
-msgstr ""
-
-#: templates/analytics.html:145 templates/analytics.html:209
-#: templates/analytics.html:399 templates/analytics.html:447
-#: templates/analytics.html:663
-msgid "2018 год"
-msgstr ""
-
-#: templates/analytics.html:145 templates/analytics.html:209
-#: templates/analytics.html:399 templates/analytics.html:447
-#: templates/analytics.html:663 templates/station-info.html:137
+#: templates/analytics.html:208 templates/analytics.html:246
+#: templates/analytics.html:284 templates/analytics.html:323
+#: templates/analytics.html:363 templates/analytics.html:427
+#: templates/analytics.html:617 templates/analytics.html:665
+#: templates/analytics.html:881 templates/station-info.html:137
 #: templates/station-info.html:177 templates/station-info.html:217
 #: templates/station-info.html:258
 msgid "2019 год"
 msgstr ""
 
-#: templates/analytics.html:145 templates/analytics.html:209
-#: templates/analytics.html:399 templates/analytics.html:447
-#: templates/analytics.html:663 templates/station-info.html:137
+#: templates/analytics.html:208 templates/analytics.html:246
+#: templates/analytics.html:284 templates/analytics.html:323
+#: templates/analytics.html:363 templates/analytics.html:427
+#: templates/analytics.html:617 templates/analytics.html:665
+#: templates/analytics.html:881 templates/station-info.html:137
 #: templates/station-info.html:177 templates/station-info.html:217
 #: templates/station-info.html:258
 msgid "2020 год"
 msgstr ""
 
-#: templates/analytics.html:148
+#: templates/analytics.html:208 templates/analytics.html:246
+#: templates/analytics.html:284 templates/analytics.html:323
+#: templates/station-info.html:137 templates/station-info.html:177
+#: templates/station-info.html:217 templates/station-info.html:258
+msgid "2021 год"
+msgstr ""
+
+#: templates/analytics.html:233 templates/station-info.html:162
+msgid "Потребление топлива, Газ тыс.м3"
+msgstr ""
+
+#: templates/analytics.html:271 templates/station-info.html:202
+msgid "Потребление топлива, Мазут тнт"
+msgstr ""
+
+#: templates/analytics.html:309 templates/station-info.html:242
+msgid "Потребление топлива, Уголь тнт"
+msgstr ""
+
+#: templates/analytics.html:348 templates/station-info.html:283
+msgid "Производство тепла"
+msgstr ""
+
+#: templates/analytics.html:363 templates/analytics.html:427
+#: templates/analytics.html:881
+msgid "2016 год"
+msgstr ""
+
+#: templates/analytics.html:363 templates/analytics.html:427
+#: templates/analytics.html:617 templates/analytics.html:665
+#: templates/analytics.html:881
+msgid "2017 год"
+msgstr ""
+
+#: templates/analytics.html:363 templates/analytics.html:427
+#: templates/analytics.html:617 templates/analytics.html:665
+#: templates/analytics.html:881
+msgid "2018 год"
+msgstr ""
+
+#: templates/analytics.html:366
 msgid "Передача электроэнергии, млн. кВт*ч"
 msgstr ""
 
-#: templates/analytics.html:156 templates/analytics.html:193
+#: templates/analytics.html:374 templates/analytics.html:411
 msgid "Доля потерь электроэнергии"
 msgstr ""
 
-#: templates/analytics.html:178
+#: templates/analytics.html:396
 msgid "Показатели основной деятельности"
 msgstr ""
 
-#: templates/analytics.html:186
+#: templates/analytics.html:404
 msgid "Передача эдектроэнергии, млн. кВт*ч"
 msgstr ""
 
-#: templates/analytics.html:212
+#: templates/analytics.html:430
 msgid "КЛ-220кВ"
 msgstr ""
 
-#: templates/analytics.html:219
+#: templates/analytics.html:437
 msgid "КЛ-110кВ"
 msgstr ""
 
-#: templates/analytics.html:226
+#: templates/analytics.html:444
 msgid "КЛ-20кВ"
 msgstr ""
 
-#: templates/analytics.html:233
+#: templates/analytics.html:451
 msgid "КЛ-10кВ"
 msgstr ""
 
-#: templates/analytics.html:240
+#: templates/analytics.html:458
 msgid "КЛ-6кВ"
 msgstr ""
 
-#: templates/analytics.html:247
+#: templates/analytics.html:465
 msgid "КЛ-0,4кВ"
 msgstr ""
 
-#: templates/analytics.html:254
+#: templates/analytics.html:472
 msgid "ВЛ-220кВ"
 msgstr ""
 
-#: templates/analytics.html:261
+#: templates/analytics.html:479
 msgid "ВЛ-110кВ"
 msgstr ""
 
-#: templates/analytics.html:268
+#: templates/analytics.html:486
 msgid "ВЛ-10кВ"
 msgstr ""
 
-#: templates/analytics.html:275
+#: templates/analytics.html:493
 msgid "ВЛ-0,4кВ"
 msgstr ""
 
-#: templates/analytics.html:295
+#: templates/analytics.html:513
 msgid "Динамика развития электросетевого оборудования"
 msgstr ""
 
-#: templates/analytics.html:303
+#: templates/analytics.html:521
 msgid "протяженность ВЛ и КЛ, км"
 msgstr ""
 
-#: templates/analytics.html:355
+#: templates/analytics.html:573
 msgid "Астана РЭК"
 msgstr ""
 
-#: templates/analytics.html:355
+#: templates/analytics.html:573
 msgid "Атырау-Жарык"
 msgstr ""
 
-#: templates/analytics.html:355
+#: templates/analytics.html:573
 msgid "Онтустик Жарык Транзит РЭК"
 msgstr ""
 
-#: templates/analytics.html:355
+#: templates/analytics.html:573
 msgid "Кокшетау-Энерго"
 msgstr ""
 
-#: templates/analytics.html:355
+#: templates/analytics.html:573
 msgid "Павлодарская РЭК"
 msgstr ""
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "Жезказганская РЭК"
 msgstr ""
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "Алатау-Жарык (АЖК)"
 msgstr ""
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "Акмолинская РЭК"
 msgstr ""
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "Энергосистема"
 msgstr ""
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "Мангистауская РЭК"
 msgstr ""
 
-#: templates/analytics.html:356
+#: templates/analytics.html:574
 msgid "ТАТЭК"
 msgstr ""
 
-#: templates/analytics.html:357
+#: templates/analytics.html:575
 msgid "Жамбылские электрические сети"
 msgstr ""
 
-#: templates/analytics.html:357
+#: templates/analytics.html:575
 msgid "Кызылординская РЭК"
 msgstr ""
 
-#: templates/analytics.html:357
+#: templates/analytics.html:575
 msgid "Караганды Жарык"
 msgstr ""
 
-#: templates/analytics.html:357
+#: templates/analytics.html:575
 msgid "Северо-Казахстанская РЭК"
 msgstr ""
 
-#: templates/analytics.html:358
+#: templates/analytics.html:576
 msgid "Карагандинская РЭК"
 msgstr ""
 
-#: templates/analytics.html:358
+#: templates/analytics.html:576
 msgid "ВКО АО \"Объединенная ЭнергоСервисная Комп.\""
 msgstr ""
 
-#: templates/analytics.html:358
+#: templates/analytics.html:576
 msgid "Запано-Казахстанская РЭК"
 msgstr ""
 
-#: templates/analytics.html:359
+#: templates/analytics.html:577
 msgid "Межрегионэнерготранзит"
 msgstr ""
 
-#: templates/analytics.html:362 templates/analytics.html:383
+#: templates/analytics.html:580 templates/analytics.html:601
 msgid "Износ основных фондов"
 msgstr ""
 
-#: templates/analytics.html:402
+#: templates/analytics.html:620
 msgid "SAIDI продолжительнось перерывов в электроснабжении, часов в год"
 msgstr ""
 
-#: templates/analytics.html:421 templates/analytics.html:469
+#: templates/analytics.html:639 templates/analytics.html:687
 msgid "Индексы надежности электроснабжения"
 msgstr ""
 
-#: templates/analytics.html:450
+#: templates/analytics.html:668
 msgid "SAIFI частота перерывов в электроснабжении, раз в год"
 msgstr ""
 
-#: templates/analytics.html:502
+#: templates/analytics.html:720
 msgid "Дом 2/6. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
 msgstr ""
 
-#: templates/analytics.html:513
+#: templates/analytics.html:731
 msgid "Дом 2/6. Потребление тепла (Гкал) - Квартиры"
 msgstr ""
 
-#: templates/analytics.html:524
+#: templates/analytics.html:742
 msgid "Дом 2/5. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
 msgstr ""
 
-#: templates/analytics.html:535
+#: templates/analytics.html:753
 msgid "Дом 2/5. Потребление тепла (Гкал) - Квартиры"
 msgstr ""
 
-#: templates/analytics.html:546
+#: templates/analytics.html:764
 msgid "Дом 2/4. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
 msgstr ""
 
-#: templates/analytics.html:557
+#: templates/analytics.html:775
 msgid "Дом 2/4. Потребление тепла (Гкал) - Квартиры"
 msgstr ""
 
-#: templates/analytics.html:568
+#: templates/analytics.html:786
 msgid "Дом 2/3. Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
 msgstr ""
 
-#: templates/analytics.html:579
+#: templates/analytics.html:797
 msgid "Дом 2/3. Потребление тепла (Гкал) - Квартиры"
 msgstr ""
 
-#: templates/analytics.html:601
+#: templates/analytics.html:819
 msgid "ЖК Северная корона"
 msgstr ""
 
-#: templates/analytics.html:618
+#: templates/analytics.html:836
 msgid "Потребление тепла (Гкал) - Нежелые, коммерческие помещения"
 msgstr ""
 
-#: templates/analytics.html:630
+#: templates/analytics.html:848
 msgid "Потребление тепла (Гкал) - Квартиры"
 msgstr ""
 
-#: templates/analytics.html:653
+#: templates/analytics.html:871
 msgid "ЖК Арайлым"
 msgstr ""
 
-#: templates/analytics.html:666
+#: templates/analytics.html:884
 msgid "ПС-220кВ"
 msgstr ""
 
-#: templates/analytics.html:672
+#: templates/analytics.html:890
 msgid "ПС-110кВ"
 msgstr ""
 
-#: templates/analytics.html:678
+#: templates/analytics.html:896
 msgid "РП, ТП, КТП-10/0,4кВ"
 msgstr ""
 
-#: templates/analytics.html:697
+#: templates/analytics.html:915
 msgid "Динамика развития электросетевого оборудования, штук"
 msgstr ""
 
@@ -293,7 +323,7 @@ msgstr ""
 msgid "О проекте"
 msgstr ""
 
-#: templates/base.html:18 templates/base.html:44
+#: templates/base.html:18 templates/base.html:44 templates/team.html:7
 msgid "Команда"
 msgstr ""
 
@@ -337,91 +367,91 @@ msgstr ""
 msgid "Больше информации"
 msgstr ""
 
-#: templates/main-page.html:79 templates/main-page.html:109
+#: templates/main-page.html:83 templates/main-page.html:113
 msgid "Выберите дату"
 msgstr ""
 
-#: templates/main-page.html:80 templates/main-page.html:110
+#: templates/main-page.html:84 templates/main-page.html:114
 msgid "Показать"
 msgstr ""
 
-#: templates/main-page.html:188
+#: templates/main-page.html:239
 msgid "Скорость ветра, "
 msgstr ""
 
-#: templates/main-page.html:192 templates/main-page.html:316
+#: templates/main-page.html:243 templates/main-page.html:367
 msgid "Январь"
 msgstr ""
 
-#: templates/main-page.html:192 templates/main-page.html:316
+#: templates/main-page.html:243 templates/main-page.html:367
 msgid "Февраль"
 msgstr ""
 
-#: templates/main-page.html:192 templates/main-page.html:316
+#: templates/main-page.html:243 templates/main-page.html:367
 msgid "Март"
 msgstr ""
 
-#: templates/main-page.html:192 templates/main-page.html:316
+#: templates/main-page.html:243 templates/main-page.html:367
 msgid "Апрель"
 msgstr ""
 
-#: templates/main-page.html:192 templates/main-page.html:316
+#: templates/main-page.html:243 templates/main-page.html:367
 msgid "Май"
 msgstr ""
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Июнь"
 msgstr ""
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Июль"
 msgstr ""
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Август"
 msgstr ""
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Сентябрь"
 msgstr ""
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Октябрь"
 msgstr ""
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Ноябрь"
 msgstr ""
 
-#: templates/main-page.html:193 templates/main-page.html:317
+#: templates/main-page.html:244 templates/main-page.html:368
 msgid "Декабрь"
 msgstr ""
 
-#: templates/main-page.html:196
+#: templates/main-page.html:247
 msgid "Скорость ветра м/с (Среднее значение)"
 msgstr ""
 
-#: templates/main-page.html:206 templates/main-page.html:330
+#: templates/main-page.html:257 templates/main-page.html:381
 msgid " год"
 msgstr ""
 
-#: templates/main-page.html:220
+#: templates/main-page.html:271
 msgid "Скорость ветра м/с"
 msgstr ""
 
-#: templates/main-page.html:263
+#: templates/main-page.html:314
 msgid "Скорость м/с"
 msgstr ""
 
-#: templates/main-page.html:312
+#: templates/main-page.html:363
 msgid "Температура воздуха, "
 msgstr ""
 
-#: templates/main-page.html:320
+#: templates/main-page.html:371
 msgid "Температура воздуха по цельсию (Среднее значение)"
 msgstr ""
 
-#: templates/main-page.html:344 templates/main-page.html:387
+#: templates/main-page.html:395 templates/main-page.html:438
 msgid "Температура воздуха по цельсию"
 msgstr ""
 
@@ -485,35 +515,14 @@ msgstr ""
 msgid "Заводской номер"
 msgstr ""
 
-#: templates/station-info.html:137 templates/station-info.html:177
-#: templates/station-info.html:217 templates/station-info.html:258
-msgid "2021 год"
-msgstr ""
-
-#: templates/station-info.html:162
-msgid "Потребление топлива, Газ тыс.м3"
-msgstr ""
-
-#: templates/station-info.html:202
-msgid "Потребление топлива, Мазут тнт"
-msgstr ""
-
-#: templates/station-info.html:242
-msgid "Потребление топлива, Уголь тнт"
-msgstr ""
-
-#: templates/station-info.html:283
-msgid "Производство тепла"
-msgstr ""
-
 #: templates/team.html:12
 msgid "Аягоз Хамзина"
 msgstr ""
 
 #: templates/team.html:13
 msgid ""
-"Хамзина Аягоз Сактаганкызы родилась в 1994 году, 25 ноября (25.11.1994) "
-"в г.Уральск, Казахстан. В\n"
+"Хамзина Аягоз Сактаганкызы родилась в 1994 году, 25 ноября (25.11.1994) в"
+" г.Уральск, Казахстан. В\n"
 "                2012 году закончила среднюю общеобразовательную школу №2 "
 "и поступила в Казахский Национальный\n"
 "                Университет на специальность «химик-технолог». В 2016 "
@@ -522,8 +531,8 @@ msgid ""
 "позиции младшего научного сотрудника в НИИ\n"
 "                проблем горения. В ходе научной деятельности была "
 "усовершенствована технология получения экологических\n"
-"                водорастворимых полиуретановых красок. В 2017 году "
-"прошла стажировку в Лодзинском Политехническом\n"
+"                водорастворимых полиуретановых красок. В 2017 году прошла"
+" стажировку в Лодзинском Политехническом\n"
 "                Университете г. Лодзь, Польша. В 2018 году участвовала в "
 "конференции, посвященной устойчивому развитию,\n"
 "                организованной ООН в штаб-квартире в Нью-Йорке. "
@@ -536,8 +545,8 @@ msgstr ""
 
 #: templates/team.html:29
 msgid ""
-"Nurkhat Zhakiyev is a computer modeler of energy systems, GHG "
-"emissions projections in industry\n"
+"Nurkhat Zhakiyev is a computer modeler of energy systems, GHG emissions "
+"projections in industry\n"
 "                sector and Climate change mitigation analyst. He is "
 "currently working at Astana IT University. He holds\n"
 "                PhD in physics from Eurasian National University "
@@ -554,22 +563,22 @@ msgid ""
 "responsible for provision of information about\n"
 "                Kazakhstan’s activities to mitigate climate change, "
 "including policies and measures that it has\n"
-"                implemented or plans to implement and update of "
-"forecasts for 2030 and 2050 (industrial sector). In\n"
+"                implemented or plans to implement and update of forecasts"
+" for 2030 and 2050 (industrial sector). In\n"
 "                2019-2020 years he participated in soft linking project "
 "of CGE (top-down) model of Kazakhstan with\n"
-"                TIMES-Kazakhstan (bottom-up) energy system model (PMR/"
-"World Bank Project for Kazakhstan). During this\n"
-"                project he took part in development of initial data "
-"sets, optimization model of energy system of\n"
+"                TIMES-Kazakhstan (bottom-up) energy system model "
+"(PMR/World Bank Project for Kazakhstan). During this\n"
+"                project he took part in development of initial data sets,"
+" optimization model of energy system of\n"
 "                Kazakhstan, in analysis of the various policies and "
 "measures to reduce the impact on climate, in\n"
 "                analysis of the role of the emissions trading system and "
 "the development of different options for\n"
 "                different scenarios. Main research interests are technic-"
 "economical modelling of energy systems, Climate\n"
-"                Change Mitigation Analysis and GHG emissions "
-"projections. The outputs from their works has already\n"
+"                Change Mitigation Analysis and GHG emissions projections."
+" The outputs from their works has already\n"
 "                resulted in academic publications in form a joint "
 "research article in a leading journal on industry and\n"
 "                energy research (~15 publications in international "
@@ -582,18 +591,18 @@ msgstr ""
 "физических наук Евразийского национального университета (Казахстан, 2015 "
 "г.). После получения степени PhD в 2015 году начал работать научным "
 "сотрудником в ГУ «Научно-инновационная система Назарбаев Университета», "
-"ГУ «Национальная лаборатория Астана», Лаборатории энергетической "
-"экологии и климата Назарбаев Университета. Нурхат участвовал в проектах "
-"по моделированию энергетического сектора Казахстана с использованием "
+"ГУ «Национальная лаборатория Астана», Лаборатории энергетической экологии"
+" и климата Назарбаев Университета. Нурхат участвовал в проектах по "
+"моделированию энергетического сектора Казахстана с использованием "
 "инструментов моделирования энергосистем ELMOD, TIMES. В 2015-2021 годах "
 "участвовал в проекте «Разработка Национального сообщения Казахстана к "
 "РКИК ООН и БР», где отвечал за предоставление информации о деятельности "
-"Казахстана по смягчению последствий изменения климата, включая политику "
-"и меры, которые он реализовал или планирует реализовать, и обновление "
+"Казахстана по смягчению последствий изменения климата, включая политику и"
+" меры, которые он реализовал или планирует реализовать, и обновление "
 "прогнозов на 2030 и 2050 годы (промышленный сектор). В 2019-2020 гг. "
 "участвовал в проекте soft link CGE (сверху вниз) модели Казахстана с "
-"моделью энергосистемы TIMES-Kazakhstan (снизу вверх) (Проект PMR/"
-"Всемирного банка для Казахстана). В ходе этого проекта он принимал "
+"моделью энергосистемы TIMES-Kazakhstan (снизу вверх) (Проект "
+"PMR/Всемирного банка для Казахстана). В ходе этого проекта он принимал "
 "участие в разработке исходных наборов данных, модели оптимизации "
 "энергетической системы Казахстана, в анализе различных политик и мер по "
 "снижению воздействия на климат, в анализе роли системы торговли квотами "
@@ -608,10 +617,10 @@ msgstr ""
 
 #: templates/team.html:54
 msgid ""
-"Кенжина Мадина, 25 лет, выпускница программы бакалавриата "
-"«Electrical and electronic engineering»\n"
-"                Назарбаев Университета 2019 года, "
-"специализация Power Engineering. Имеется несколько публикаций,\n"
+"Кенжина Мадина, 25 лет, выпускница программы бакалавриата «Electrical and"
+" electronic engineering»\n"
+"                Назарбаев Университета 2019 года, специализация Power "
+"Engineering. Имеется несколько публикаций,\n"
 "                посвященные изучению надежной работы энергосистемы, "
 "целесообразности внедрения виртуальной\n"
 "                электростанции в Казахстане. На текущий момент ведущий "
@@ -619,3 +628,4 @@ msgid ""
 "                эксплуатация активно-адаптивных систем Единой "
 "Энергосистемы Казахстана (АРЧМ, WAMS и др.)."
 msgstr ""
+

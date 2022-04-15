@@ -2,9 +2,10 @@ from flask import Flask, render_template, request, redirect
 from flask_babel import Babel
 
 from data.Standart import db_session
-from data_load import winddata_json, airtemp_json, winddata_max_min, airtemp_max_min, stations_main_p, stations_main_p2
-from data_load_en import stations_main_p_en, stations_main_p2_en
-from data_load_kk import stations_main_p_kk, stations_main_p2_kk
+from data_load import winddata_json, airtemp_json, winddata_max_min, airtemp_max_min, stations_main_p, \
+    stations_main_p2, json_data_id_ru
+from data_load_en import stations_main_p_en, stations_main_p2_en, json_data_id_en
+from data_load_kk import stations_main_p_kk, stations_main_p2_kk, json_data_id_kk
 
 from data.database.station import Station
 from data.database.station_en import StationEN
@@ -104,7 +105,19 @@ def main_page():
 
 @app.route('/analytics')
 def analytics_page():
-    return render_template('analytics.html')
+    db_sess = db_session.create_session()
+    if current_lang == 'ru':
+        stations = db_sess.query(Station).all()
+
+        return render_template('analytics.html', stations=stations, json_data=json_data_id_ru)
+    elif current_lang == 'en':
+        stations = db_sess.query(StationEN).all()
+
+        return render_template('analytics.html', stations=stations, json_data=json_data_id_en)
+    elif current_lang == 'kk':
+        stations = db_sess.query(StationKK).all()
+
+        return render_template('analytics.html', stations=stations, json_data=json_data_id_kk)
 
 
 @app.route('/team')

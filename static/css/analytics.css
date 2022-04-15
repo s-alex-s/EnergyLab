@@ -4,8 +4,17 @@
     width: 100%;
 }
 
+.container-graph {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
 .graph {
     width: 45%;
+}
+.graph3 {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .graph2 {
@@ -73,6 +82,6 @@
     box-sizing: border-box;
 }
 
-.info2 {
+.info2, .info3 {
     display: none;
 }

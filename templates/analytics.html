@@ -9,7 +9,8 @@
     <div class="container" style="margin-bottom: 50px">
         <div onclick="change_info('info1', 'b1')" class="year-button white-box-button b1 button year-active" style="margin-right: 30px">
             {{ _('Астана-РЭК') }}</div>
-        <div onclick="change_info('info2', 'b2')" class="year-button white-box-button b2 button">{{ _('Жилые комплексы') }}</div>
+        <div onclick="change_info('info2', 'b2')" class="year-button white-box-button b2 button" style="margin-right: 30px">{{ _('Жилые комплексы') }}</div>
+        <div onclick="change_info('info3', 'b3')" class="year-button white-box-button b3 button">{{ _('ТЭЦ') }}</div>
     </div>
 
     <div class="info1 part">
@@ -86,6 +87,42 @@
         </div>
     </div>
 
+    <div class="info3 part">
+        {% for station in stations %}
+            <div class="container">
+                <h1>{{ station.station_name }}</h1>
+            </div>
+
+            <div class="container">
+                <div class="container-graph" style="margin-right: 20px">
+                    <div class="white-box graph3">
+                        <canvas id="myChart_tec{{ station.id }}"></canvas>
+                    </div>
+                </div>
+
+                <div class="container-graph">
+                    <div class="white-box graph3">
+                        <canvas id="myChart2_tec{{ station.id }}"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="container-graph">
+                    <div class="white-box graph3">
+                        <canvas id="myChart3_tec{{ station.id }}"></canvas>
+                    </div>
+                </div>
+
+                <div class="container-graph" style="margin-left: 20px">
+                    <div class="white-box graph3">
+                        <canvas id="myChart4_tec{{ station.id }}"></canvas>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
     <script src="/static/script/chart.min.js"></script>
     <script src="/static/script/chartjs-plugin-datalabels.min.js"></script>
     <script>
@@ -131,14 +168,195 @@
                 chartStatus2.destroy();
             }
 
+            {% for i in stations %}
+                {% for j in range(1, 5) %}
+                    {% if j != 1 %}
+                    let chartStatus{{ j }}_tec{{ i.id }} = Chart.getChart('myChart{{ j }}_tec{{ i.id }}');
+                    if (chartStatus{{ j }}_tec{{ i.id }} !== undefined) {
+                        chartStatus{{ j }}_tec{{ i.id }}.destroy();
+                    }
+                    {% else %}
+                    let chartStatus_tec{{ i.id }} = Chart.getChart('myChart_tec{{ i.id }}');
+                    if (chartStatus_tec{{ i.id }} !== undefined) {
+                        chartStatus_tec{{ i.id }}.destroy();
+                    }
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
             make_graph();
             make_graph2();
             make_graph3();
             make_graph6();
             make_graph7();
             make_graph8();
+            {% for i in stations %}
+                {% for j in range(1, 5) %}
+                    {% if j != 1 %}
+                    make_graph{{ j }}_tec{{ i.id }}();
+                    {% else %}
+                    make_graph_tec{{ i.id }}();
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
         }
     </script>
+    {% for i in stations %}
+        <script>
+            function make_graph_tec{{ i.id }}() {
+                const data_tec{{ i.id }} = {
+                    labels: ['{{ _('2019 год') }}', '{{ _('2020 год') }}', '{{ _('2021 год') }}'],
+                    datasets: []
+                };
+
+                let info_tec{{ i.id }} = {{ json_data|tojson }};
+                for (let key in info_tec{{ i.id }}["{{ i.id }}"]) {
+                    data_tec{{ i.id }}.datasets.push({
+                        label: key,
+                        data: [info_tec{{ i.id }}["{{ i.id }}"][key]['2019_gas'], info_tec{{ i.id }}["{{ i.id }}"][key]['2020_gas'], info_tec{{ i.id }}["{{ i.id }}"][key]['2021_gas']],
+                        backgroundColor: info_tec{{ i.id }}["{{ i.id }}"][key]['color'],
+                        borderColor: info_tec{{ i.id }}["{{ i.id }}"][key]['color']
+                    })
+                }
+
+                const config_tec{{ i.id }} = {
+                    type: 'bar',
+                    data: data_tec{{ i.id }},
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top'
+                            },
+                            title: {
+                                display: true,
+                                text: '{{ _('Потребление топлива, Газ тыс.м3') }}'
+                            }
+                        }
+                    }
+                };
+
+                const ctx_tec{{ i.id }} = document.getElementById('myChart_tec{{ i.id }}').getContext('2d');
+                const myChart_tec{{ i.id }} = new Chart(ctx_tec{{ i.id }}, config_tec{{ i.id }});
+            }
+        </script>
+        <script>
+            function make_graph2_tec{{ i.id }}() {
+                const data2_tec{{ i.id }} = {
+                    labels: ['{{ _('2019 год') }}', '{{ _('2020 год') }}', '{{ _('2021 год') }}'],
+                    datasets: []
+                };
+
+                let info2_tec{{ i.id }} = {{ json_data|tojson }};
+                for (let key in info2_tec{{ i.id }}["{{ i.id }}"]) {
+                    data2_tec{{ i.id }}.datasets.push({
+                        label: key,
+                        data: [info2_tec{{ i.id }}["{{ i.id }}"][key]['2019_masut'], info2_tec{{ i.id }}["{{ i.id }}"][key]['2020_masut'], info2_tec{{ i.id }}["{{ i.id }}"][key]['2021_masut']],
+                        backgroundColor: info2_tec{{ i.id }}["{{ i.id }}"][key]['color'],
+                        borderColor: info2_tec{{ i.id }}["{{ i.id }}"][key]['color']
+                    })
+                }
+
+                const config2_tec{{ i.id }} = {
+                    type: 'bar',
+                    data: data2_tec{{ i.id }},
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top'
+                            },
+                            title: {
+                                display: true,
+                                text: '{{ _('Потребление топлива, Мазут тнт') }}'
+                            }
+                        }
+                    }
+                };
+
+                const ctx2_tec{{ i.id }} = document.getElementById('myChart2_tec{{ i.id }}').getContext('2d');
+                const myChart2_tec{{ i.id }} = new Chart(ctx2_tec{{ i.id }}, config2_tec{{ i.id }});
+            }
+        </script>
+        <script>
+            function make_graph3_tec{{ i.id }}() {
+                const data3_tec{{ i.id }} = {
+                    labels: ['{{ _('2019 год') }}', '{{ _('2020 год') }}', '{{ _('2021 год') }}'],
+                    datasets: []
+                };
+
+                let info3_tec{{ i.id }} = {{ json_data|tojson }};
+                for (let key in info3_tec{{ i.id }}["{{ i.id }}"]) {
+                    data3_tec{{ i.id }}.datasets.push({
+                        label: key,
+                        data: [info3_tec{{ i.id }}["{{ i.id }}"][key]['2019_ugol'], info3_tec{{ i.id }}["{{ i.id }}"][key]['2020_ugol'], info3_tec{{ i.id }}["{{ i.id }}"][key]['2021_ugol']],
+                        backgroundColor: info3_tec{{ i.id }}["{{ i.id }}"][key]['color'],
+                        borderColor: info3_tec{{ i.id }}["{{ i.id }}"][key]['color']
+                    })
+                }
+
+                const config3_tec{{ i.id }} = {
+                    type: 'bar',
+                    data: data3_tec{{ i.id }},
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top'
+                            },
+                            title: {
+                                display: true,
+                                text: '{{ _('Потребление топлива, Уголь тнт') }}'
+                            }
+                        }
+                    }
+                };
+
+                const ctx3_tec{{ i.id }} = document.getElementById('myChart3_tec{{ i.id }}').getContext('2d');
+                const myChart3_tec{{ i.id }} = new Chart(ctx3_tec{{ i.id }}, config3_tec{{ i.id }});
+            }
+        </script>
+
+        <script>
+            function make_graph4_tec{{ i.id }}() {
+                const data4_tec{{ i.id }} = {
+                    labels: ['{{ _('2019 год') }}', '{{ _('2020 год') }}', '{{ _('2021 год') }}'],
+                    datasets: []
+                };
+
+                let info4_tec{{ i.id }} = {{ json_data|tojson }};
+                for (let key in info4_tec{{ i.id }}["{{ i.id }}"]) {
+                    data4_tec{{ i.id }}.datasets.push({
+                        label: key,
+                        data: [info4_tec{{ i.id }}["{{ i.id }}"][key]['2019_warm'], info4_tec{{ i.id }}["{{ i.id }}"][key]['2020_warm'], info4_tec{{ i.id }}["{{ i.id }}"][key]['2021_warm']],
+                        backgroundColor: info4_tec{{ i.id }}["{{ i.id }}"][key]['color'],
+                        borderColor: info4_tec{{ i.id }}["{{ i.id }}"][key]['color']
+                    })
+                }
+
+                const config4_tec{{ i.id }} = {
+                    type: 'bar',
+                    data: data4_tec{{ i.id }},
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top'
+                            },
+                            title: {
+                                display: true,
+                                text: '{{ _('Производство тепла') }}'
+                            }
+                        }
+                    }
+                };
+
+                const ctx4_tec{{ i.id }} = document.getElementById('myChart4_tec{{ i.id }}').getContext('2d');
+                const myChart4_tec{{ i.id }} = new Chart(ctx4_tec{{ i.id }}, config4_tec{{ i.id }});
+            }
+        </script>
+    {% endfor %}
+
     <script>
         function make_graph() {
             const data = {
