@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect
+import datetime
+
+from flask import Flask, render_template, request, redirect, session
 from flask_babel import Babel
 
 from data.Standart import db_session
@@ -15,23 +17,34 @@ from data.database.station_kk import StationKK
 db_session.global_init('db/database.db')
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'energylab'
+app.permanent_session_lifetime = datetime.timedelta(days=360)
 babel = Babel(app)
 
 
 BASE_URL = 'https://energylab.kz/'
-current_lang = 'ru'
+LANGUAGES = ['ru', 'en', 'kk']
+
+
+@app.before_request
+def bef_req():
+    session.permanent = True
+    app.permanent_session_lifetime = datetime.timedelta(days=360)
 
 
 @app.context_processor
 def utility_processor():
     def dec_lang():
-        global current_lang
+        try:
+            lang = session['lang']
+        except KeyError:
+            lang = request.accept_languages.best_match(LANGUAGES)
 
         LANGS = {
             'ru': 'none',
             'en': 'none',
             'kk': 'none',
-            current_lang: 'underline'
+            lang: 'underline'
         }
 
         return LANGS
@@ -40,36 +53,19 @@ def utility_processor():
 
 @babel.localeselector
 def get_locale():
-    global current_lang
-
-    return current_lang
-
-
-@app.route('/change_lang/ru')
-def ru():
-    global current_lang
-
-    current_lang = 'ru'
-    if request.referrer:
-        return redirect(request.referrer)
-    return redirect(BASE_URL)
+    try:
+        lang = session['lang']
+    except KeyError:
+        lang = None
+    if lang is not None:
+        return lang
+    session['lang'] = request.accept_languages.best_match(LANGUAGES)
+    return session['lang']
 
 
-@app.route('/change_lang/en')
-def en():
-    global current_lang
-
-    current_lang = 'en'
-    if request.referrer:
-        return redirect(request.referrer)
-    return redirect(BASE_URL)
-
-
-@app.route('/change_lang/kz')
-def kz():
-    global current_lang
-
-    current_lang = 'kk'
+@app.route('/change_language/<language>')
+def change_language(language=None):
+    session['lang'] = language
     if request.referrer:
         return redirect(request.referrer)
     return redirect(BASE_URL)
@@ -77,47 +73,89 @@ def kz():
 
 @app.route('/')
 def main_page():
-    if current_lang == 'ru':
-        return render_template('main-page.html',
-                               winddata=winddata_json,
-                               airtemp=airtemp_json,
-                               winddata_max_min=winddata_max_min,
-                               airtemp_max_min=airtemp_max_min,
-                               stations=stations_main_p,
-                               stations2=stations_main_p2)
-    elif current_lang == 'en':
-        return render_template('main-page.html',
-                               winddata=winddata_json,
-                               airtemp=airtemp_json,
-                               winddata_max_min=winddata_max_min,
-                               airtemp_max_min=airtemp_max_min,
-                               stations=stations_main_p_en,
-                               stations2=stations_main_p2_en)
-    elif current_lang == 'kk':
-        return render_template('main-page.html',
-                               winddata=winddata_json,
-                               airtemp=airtemp_json,
-                               winddata_max_min=winddata_max_min,
-                               airtemp_max_min=airtemp_max_min,
-                               stations=stations_main_p_kk,
-                               stations2=stations_main_p2_kk)
+    try:
+        if session['lang'] == 'ru':
+            return render_template('main-page.html',
+                                   winddata=winddata_json,
+                                   airtemp=airtemp_json,
+                                   winddata_max_min=winddata_max_min,
+                                   airtemp_max_min=airtemp_max_min,
+                                   stations=stations_main_p,
+                                   stations2=stations_main_p2)
+        elif session['lang'] == 'en':
+            return render_template('main-page.html',
+                                   winddata=winddata_json,
+                                   airtemp=airtemp_json,
+                                   winddata_max_min=winddata_max_min,
+                                   airtemp_max_min=airtemp_max_min,
+                                   stations=stations_main_p_en,
+                                   stations2=stations_main_p2_en)
+        elif session['lang'] == 'kk':
+            return render_template('main-page.html',
+                                   winddata=winddata_json,
+                                   airtemp=airtemp_json,
+                                   winddata_max_min=winddata_max_min,
+                                   airtemp_max_min=airtemp_max_min,
+                                   stations=stations_main_p_kk,
+                                   stations2=stations_main_p2_kk)
+    except KeyError:
+        lang = request.accept_languages.best_match(LANGUAGES)
+        if lang == 'ru':
+            return render_template('main-page.html',
+                                   winddata=winddata_json,
+                                   airtemp=airtemp_json,
+                                   winddata_max_min=winddata_max_min,
+                                   airtemp_max_min=airtemp_max_min,
+                                   stations=stations_main_p,
+                                   stations2=stations_main_p2)
+        elif lang == 'en':
+            return render_template('main-page.html',
+                                   winddata=winddata_json,
+                                   airtemp=airtemp_json,
+                                   winddata_max_min=winddata_max_min,
+                                   airtemp_max_min=airtemp_max_min,
+                                   stations=stations_main_p_en,
+                                   stations2=stations_main_p2_en)
+        elif lang == 'kk':
+            return render_template('main-page.html',
+                                   winddata=winddata_json,
+                                   airtemp=airtemp_json,
+                                   winddata_max_min=winddata_max_min,
+                                   airtemp_max_min=airtemp_max_min,
+                                   stations=stations_main_p_kk,
+                                   stations2=stations_main_p2_kk)
 
 
 @app.route('/analytics')
 def analytics_page():
     db_sess = db_session.create_session()
-    if current_lang == 'ru':
-        stations = db_sess.query(Station).all()
+    try:
+        if session['lang'] == 'ru':
+            stations = db_sess.query(Station).all()
 
-        return render_template('analytics.html', stations=stations, json_data=json_data_id_ru)
-    elif current_lang == 'en':
-        stations = db_sess.query(StationEN).all()
+            return render_template('analytics.html', stations=stations, json_data=json_data_id_ru)
+        elif session['lang'] == 'en':
+            stations = db_sess.query(StationEN).all()
 
-        return render_template('analytics.html', stations=stations, json_data=json_data_id_en)
-    elif current_lang == 'kk':
-        stations = db_sess.query(StationKK).all()
+            return render_template('analytics.html', stations=stations, json_data=json_data_id_en)
+        elif session['lang'] == 'kk':
+            stations = db_sess.query(StationKK).all()
 
-        return render_template('analytics.html', stations=stations, json_data=json_data_id_kk)
+            return render_template('analytics.html', stations=stations, json_data=json_data_id_kk)
+    except KeyError:
+        lang = request.accept_languages.best_match(LANGUAGES)
+        if lang == 'ru':
+            stations = db_sess.query(Station).all()
+
+            return render_template('analytics.html', stations=stations, json_data=json_data_id_ru)
+        elif lang == 'en':
+            stations = db_sess.query(StationEN).all()
+
+            return render_template('analytics.html', stations=stations, json_data=json_data_id_en)
+        elif lang == 'kk':
+            stations = db_sess.query(StationKK).all()
+
+            return render_template('analytics.html', stations=stations, json_data=json_data_id_kk)
 
 
 @app.route('/team')
@@ -128,12 +166,21 @@ def team():
 @app.route('/station-info/<int:station_id>')
 def object_info(station_id):
     db_sess = db_session.create_session()
-    if current_lang == 'ru':
-        station = db_sess.query(Station).get(station_id)
-    elif current_lang == 'en':
-        station = db_sess.query(StationEN).get(station_id)
-    elif current_lang == 'kk':
-        station = db_sess.query(StationKK).get(station_id)
+    try:
+        if session['lang'] == 'ru':
+            station = db_sess.query(Station).get(station_id)
+        elif session['lang'] == 'en':
+            station = db_sess.query(StationEN).get(station_id)
+        elif session['lang'] == 'kk':
+            station = db_sess.query(StationKK).get(station_id)
+    except KeyError:
+        lang = request.accept_languages.best_match(LANGUAGES)
+        if lang == 'ru':
+            station = db_sess.query(Station).get(station_id)
+        elif lang == 'en':
+            station = db_sess.query(StationEN).get(station_id)
+        elif lang == 'kk':
+            station = db_sess.query(StationKK).get(station_id)
 
     json_data = dict()
     colors = [
