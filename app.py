@@ -18,7 +18,6 @@ db_session.global_init('db/database.db')
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'energylab'
-app.permanent_session_lifetime = datetime.timedelta(days=360)
 babel = Babel(app)
 
 
