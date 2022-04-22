@@ -36,10 +36,11 @@
                 <div style="font-size: 1.6vw">{{ _('Тепловые энергостанции в городе Нур-Султан') }}</div>
 
                 <div class="select-box">
-                    <select name="station" id="station" onclick="on_select()">
+                    <select name="station" id="station" onchange="on_select();">
                         {% for i in stations %}
                             <option value="{{ i['name'] }}">{{ i['name'] }}</option>
                         {% endfor %}
+                        <option value="-" selected>-</option>
                     </select>
                     <img src="/static/img/down-arrow.png" alt="">
                 </div>
@@ -130,14 +131,21 @@
     <script>
         function on_select() {
             let d = document.querySelector('select');
-            let info = {{ stations2|tojson }};
+            if (d.value !== '-') {
+                let info = {{ stations2|tojson }};
 
-            let v = document.getElementById('object_addr').textContent = info[d.value]['address'];
-            let v2 = document.getElementById('info-check');
-            let link = document.getElementById('object_link');
-            link['href'] = "station-info/" + info[d.value]['id'];
-            link.style.display = 'block';
-            v2.style.opacity = '1';
+                let v = document.getElementById('object_addr').textContent = info[d.value]['address'];
+                let v2 = document.getElementById('info-check');
+                let link = document.getElementById('object_link');
+                link['href'] = "station-info/" + info[d.value]['id'];
+                link.style.display = 'block';
+                v2.style.opacity = '1';
+            } else {
+                let v2 = document.getElementById('info-check');
+                let link = document.getElementById('object_link');
+                link.style.display = 'none';
+                v2.style.opacity = '0';
+            }
         }
     </script>
     <script>
