@@ -4,6 +4,13 @@
     width: 100%;
 }
 
+.container-part-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin-bottom: 50px;
+}
+
 .container-graph {
     width: 45%;
     margin-bottom: 20px;
@@ -23,6 +30,7 @@
 
 .big-graph {
     width: 50%;
+    margin-right: 20px;
 }
 
 .white-box {
@@ -84,4 +92,105 @@
 
 .info2, .info3 {
     display: none;
+}
+
+.kpi {
+    margin-right: 20px;
+    width: 40%;
+}
+
+.dfa {
+    width: 50%;
+}
+
+.ddege {
+    margin-right: 20px;
+}
+
+.saidi {
+    margin-right: 20px;
+}
+
+
+.m40 {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+
+@media (max-width: 1000px) {
+    .mr20 {
+        margin-right: 0;
+    }
+
+    .ml20 {
+        margin-left: 0;
+    }
+
+    .white-box-size {
+        width: 90%;
+        height: 80vw;
+    }
+
+    .kpi, .dfa, .graph, .big-graph, .graph2, .container-graph {
+        width: 90%;
+    }
+
+    .ddege, .saidi, .kpi, .big-graph {
+        margin: 0;
+    }
+
+    .m40 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .dfa {
+        margin-bottom: 30px;
+    }
+
+    .saidi {
+        margin-top: 30px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 570px) {
+    .kpi, .dfa, .graph, .big-graph, .graph2, .white-box-size, .container-graph {
+        width: 98%;
+    }
+}
+
+@media (max-width: 520px) {
+    .container-part-buttons {
+        width: 98%;
+    }
+
+    .white-box-button {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 520px) {
+    .white-box-button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .title1 {
+        font-size: 19px;
+    }
 }

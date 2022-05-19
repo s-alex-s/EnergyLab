@@ -13,7 +13,7 @@
 <header>
     <div class="container-header">
         <a href="/" class="logo"><img src="/static/img/header-logo.png" alt="logo"></a>
-        <div class="flex-box-header">
+        <div class="flex-box-header nav-links">
             <a href="">{{ _('О проекте') }}</a>
             <a href="/team">{{ _('Команда') }}</a>
             <a href="/analytics">{{ _('Аналитика') }}</a>
@@ -21,13 +21,42 @@
             <a href="">{{ _('Контакты') }}</a>
         </div>
 
-        <div class="languages">
+        <div class="languages desktop-hide">
             <a href="/change_language/ru" style="text-decoration: {{ LANGS['ru'] }};">ru</a>
             <a href="/change_language/en" style="text-decoration: {{ LANGS['en'] }}">en</a>
             <a href="/change_language/kk" style="text-decoration: {{ LANGS['kk'] }}">kz</a>
         </div>
+
+        <input type="checkbox" name="" id="toggle" onclick=check_box()>
+        <label for="toggle" class="tog-label">
+            <div class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </label>
     </div>
 </header>
+
+<div id="menu">
+    <div class="languages">
+        <a href="/change_language/ru" style="text-decoration: {{ LANGS['ru'] }};">ru</a>
+        <a href="/change_language/en" style="text-decoration: {{ LANGS['en'] }}">en</a>
+        <a href="/change_language/kk" style="text-decoration: {{ LANGS['kk'] }}">kz</a>
+    </div>
+
+    <hr width="95%" color="gray" size="1px">
+
+    <a href="">{{ _('О проекте') }}</a>
+    <hr width="95%" color="gray" size="1px">
+    <a href="/team">{{ _('Команда') }}</a>
+    <hr width="95%" color="gray" size="1px">
+    <a href="/analytics">{{ _('Аналитика') }}</a>
+    <hr width="95%" color="gray" size="1px">
+    <a href="">{{ _('Достижение') }}</a>
+    <hr width="95%" color="gray" size="1px">
+    <a href="">{{ _('Контакты') }}</a>
+</div>
 
 <main role="main">
     {% block content %}{% endblock %}
@@ -48,5 +77,19 @@
         </div>
     </div>
 </footer>
+
+<script>
+        function check_box() {
+            let d = document.getElementById("toggle");
+            if (d.checked) {
+                let menu = document.getElementById("menu");
+                menu.style.display='flex';
+            } else {
+                let menu = document.getElementById("menu");
+                menu.style.display='none';
+            }
+        }
+</script>
+
 </body>
 </html>

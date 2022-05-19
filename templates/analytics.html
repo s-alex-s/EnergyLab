@@ -6,44 +6,46 @@
         <div style="font-size: 30px; margin-top: 20px">{{ _('Аналитика') }}</div>
     </div>
 
-    <div class="container" style="margin-bottom: 50px">
-        <div onclick="change_info('info1', 'b1')" class="year-button white-box-button b1 button year-active" style="margin-right: 30px">
-            {{ _('Астана-РЭК') }}</div>
-        <div onclick="change_info('info2', 'b2')" class="year-button white-box-button b2 button" style="margin-right: 30px">{{ _('Жилые комплексы') }}</div>
-        <div onclick="change_info('info3', 'b3')" class="year-button white-box-button b3 button">{{ _('ТЭЦ') }}</div>
+    <div class="container">
+        <div class="container-part-buttons">
+            <div onclick="change_info('info1', 'b1')" class="year-button white-box-button b1 button year-active">
+                {{ _('Астана-РЭК') }}</div>
+            <div onclick="change_info('info2', 'b2')" class="year-button white-box-button b2 button">{{ _('Жилые комплексы') }}</div>
+            <div onclick="change_info('info3', 'b3')" class="year-button white-box-button b3 button">{{ _('ТЭЦ') }}</div>
+        </div>
     </div>
 
     <div class="info1 part">
         <div class="container">
-            <h2>{{ _('Источник: данные АО "Астана РЭК"') }}</h2>
+            <h2 class="title1">{{ _('Источник: данные АО "Астана РЭК"') }}</h2>
         </div>
 
         <div class="container">
-            <div class="white-box" style="margin-right: 20px; width: 40%;">
+            <div class="white-box kpi">
                 <canvas id="myChart"></canvas>
             </div>
 
-            <div class="white-box" style="width: 50%;">
+            <div class="white-box dfa">
                 <canvas id="myChart3"></canvas>
             </div>
         </div>
 
         <div class="container">
-            <div class="white-box graph" style="margin-right: 20px">
+            <div class="white-box graph ddege">
                 <canvas id="myChart2"></canvas>
             </div>
 
-            <div class="white-box graph">
+            <div class="white-box graph ddegeu">
                 <canvas id="myChart8"></canvas>
             </div>
         </div>
 
         <div class="container">
-            <div class="white-box graph" style="margin-right: 20px;">
+            <div class="white-box graph saidi">
                 <canvas id="myChart4" class="on-observe4"></canvas>
             </div>
 
-            <div class="white-box graph">
+            <div class="white-box graph saifi">
                 <canvas id="myChart5" class="on-observe5"></canvas>
             </div>
         </div>
@@ -51,7 +53,7 @@
 
     <div class="info2 part">
         <div class="container">
-            <div class="white-box big-graph" style="margin-right: 20px">
+            <div class="white-box big-graph">
                 <canvas id="myChart6"></canvas>
             </div>
 
@@ -69,7 +71,7 @@
                 </div>
             </div>
 
-            <div class="white-box2 white-box-size" style="margin-left: 40px; margin-right: 40px">
+            <div class="white-box2 white-box-size m40">
                 <div class="scroll-box">
                     {% for i in range(1, 39) %}
                         <img src="/static/img/korona-dom-2.4/img{{ i }}.png" alt="">
@@ -94,7 +96,7 @@
             </div>
 
             <div class="container">
-                <div class="container-graph" style="margin-right: 20px">
+                <div class="container-graph mr20">
                     <div class="white-box graph3">
                         <canvas id="myChart_tec{{ station.id }}"></canvas>
                     </div>
@@ -114,7 +116,7 @@
                     </div>
                 </div>
 
-                <div class="container-graph" style="margin-left: 20px">
+                <div class="container-graph ml20">
                     <div class="white-box graph3">
                         <canvas id="myChart4_tec{{ station.id }}"></canvas>
                     </div>

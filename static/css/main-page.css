@@ -248,6 +248,17 @@
     font-size: 16px;
 }
 
+.info-title {
+    font-size: 1.6vw;
+}
+
+
+@media (max-height: 800px) {
+    .box {
+        height: 500px;
+    }
+}
+
 
 @media (max-width: 1740px) {
     .container-dir {
@@ -265,5 +276,119 @@
 
     .white-box {
         font-size: 27px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .select-box img {
+        left: 85%;
+    }
+}
+
+@media (max-width: 1120px) {
+    .year-button, .year-button2 {
+        font-size: 18px;
+    }
+
+    #datapick, #datapick2, .show-button {
+        font-size: 12px;
+    }
+
+    .select-box select {
+        font-size: 25px;
+    }
+
+    .select-box img {
+        width: 30px;
+        top: -60px;
+    }
+
+    .info-check {
+        font-size: 20px;
+    }
+
+    .info-title {
+        font-size: 1.8vw;
+    }
+
+    #datapick, #datapick2 {
+        width: 120px;
+    }
+}
+
+@media (max-width: 950px) {
+    .select-box img {
+        left: 80%;
+    }
+
+    .white-box {
+        padding: 8px 14px;
+    }
+}
+
+@media (max-width: 750px) {
+    .owl-item {
+        height: 60vh !important;
+    }
+
+    .year-button, .year-button2 {
+        font-size: 18px;
+    }
+
+    #datapick, #datapick2, .show-button {
+        font-size: 15px;
+    }
+
+    .container-graph {
+        width: 100%;
+    }
+
+    .container-dir {
+        width: 99%;
+    }
+
+    .white-box {
+        padding: 8px 8px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .select-box img {
+        left: 90%;
+    }
+
+    .img1, .img2, .img3 {
+        font-size: 9vw;
+    }
+
+    .carousel-titles {
+        text-align: center;
+        width: 95%;
+    }
+
+    .info-title {
+        font-size: 6vw;
+    }
+
+    .container-info {
+        flex-direction: column;
+        height: 250px;
+    }
+
+    .container-graph {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    .select-box img {
+        left: 83%;
     }
 }
