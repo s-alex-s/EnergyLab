@@ -13,12 +13,9 @@ from data.database.station import Station
 from data.database.station_en import StationEN
 from data.database.station_kk import StationKK
 
-from flask_ngrok import run_with_ngrok
-
 db_session.global_init('db/database.db')
 
 app = Flask(__name__)
-run_with_ngrok(app)
 app.config['SECRET_KEY'] = 'energylab'
 babel = Babel(app)
 
