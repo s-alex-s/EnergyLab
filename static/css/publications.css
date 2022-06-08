@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+table {
+    background-color: white;
+    border-bottom: 6px;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 40vh;
+}
+
+table a {
+    color: black !important;
+}
+
+table th {
+    background-color: #031052;
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid white;
+}
+
+td {
+    text-align: center;
+    padding: 5px 5px;
+    border: 1px solid black;
+}
+
+@media (max-width: 750px) {
+    table {
+        width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+    table {
+        width: 98%;
+        font-size: 11px;
+    }
+}

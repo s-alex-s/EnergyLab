@@ -110,6 +110,11 @@ def main_page():
                                stations2=stations_main_p2)
 
 
+@app.route('/publications')
+def publications():
+    return render_template("publications.html")
+
+
 @app.route('/analytics')
 def analytics_page():
     db_sess = db_session.create_session()
