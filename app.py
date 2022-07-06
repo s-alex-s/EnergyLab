@@ -19,8 +19,6 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'energylab'
 babel = Babel(app)
 
-
-BASE_URL = 'https://energylab.kz/'
 LANGUAGES = ['ru', 'en', 'kk']
 
 
@@ -66,7 +64,7 @@ def change_language(language=None):
     session['lang'] = language
     if request.referrer:
         return redirect(request.referrer)
-    return redirect(BASE_URL)
+    return redirect('')
 
 
 @app.route('/')
