@@ -113,6 +113,11 @@ def publications():
     return render_template("publications.html")
 
 
+@app.route('/contacts')
+def contacts():
+    return render_template('contacts.html')
+
+
 @app.route('/analytics')
 def analytics_page():
     db_sess = db_session.create_session()

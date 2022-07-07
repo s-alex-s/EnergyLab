@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+a {
+    color: black !important;
+}
+
+.box {
+    line-height: 45px;
+    font-size: 30px;
+}
+
+footer {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .box {
+        font-size: 4vw;
+    }
+}

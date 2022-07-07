@@ -9,7 +9,6 @@ table {
     border-bottom: 6px;
     width: 80%;
     margin-top: 20px;
-    margin-bottom: 40vh;
 }
 
 table a {
@@ -27,6 +26,10 @@ td {
     text-align: start;
     padding: 5px 5px;
     border: 1px solid black;
+}
+
+footer {
+    display: none;
 }
 
 @media (max-width: 750px) {

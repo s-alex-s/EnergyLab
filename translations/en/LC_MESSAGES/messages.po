@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-07-06 13:40+0600\n"
-"PO-Revision-Date: 2022-07-06 13:45+0600\n"
+"POT-Creation-Date: 2022-07-07 21:41+0600\n"
+"PO-Revision-Date: 2022-07-07 21:43+0600\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -329,7 +329,7 @@ msgstr "About us"
 msgid "Команда"
 msgstr "Team"
 
-#: templates/base.html:20
+#: templates/base.html:20 templates/base.html:56
 msgid "Публикации"
 msgstr "Publications"
 
@@ -337,9 +337,21 @@ msgstr "Publications"
 msgid "Контакты"
 msgstr "Contacts"
 
-#: templates/base.html:56 templates/base.html:75
+#: templates/base.html:75
 msgid "Достижение"
 msgstr "Achievement"
+
+#: templates/contacts.html:7
+msgid "Телефон: +7 7172 64-57-13"
+msgstr "Phone: +7 7172 64-57-13"
+
+#: templates/contacts.html:8
+msgid "Моб. телефон: +7 777-469-8612 (WhatsApp)"
+msgstr "Phone M.: +7 777-469-8612 (WhatsApp)"
+
+#: templates/contacts.html:9
+msgid "Почта:"
+msgstr "Mail:"
 
 #: templates/main-page.html:16
 msgid "умный - значит энергоэффективный"
