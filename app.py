@@ -113,6 +113,16 @@ def publications():
     return render_template("publications.html")
 
 
+@app.route('/smart-city')
+def smart_city():
+    return render_template('smart.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 @app.route('/contacts')
 def contacts():
     return render_template('contacts.html')
